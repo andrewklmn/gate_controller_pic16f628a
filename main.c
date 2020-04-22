@@ -20,6 +20,7 @@
 /******************************************************************************/
 char overtorgue_flag = OFF;
 char movement_direction;
+int counter = SLEEP_DELAY;
 
 /* i.e. uint8_t <variable_name>; */
 
@@ -46,8 +47,11 @@ void main(void)
             
             GREEN_LIGHT  = OFF;
             YELLOW_LIGHT = OFF;
-            RED_LIGHT = ON;
-            
+            if (counter>0) {
+                RED_LIGHT = ON;
+            } else {
+                RED_LIGHT = OFF;
+            };
         } else if(GATE_CLOSED_SENSOR==OFF && GATE_OPENED_SENSOR==ON) {
             
             GREEN_LIGHT=ON;
@@ -67,6 +71,10 @@ void main(void)
             YELLOW_LIGHT= OFF;
             RED_LIGHT   = OFF;
         };
+        
+        counter--;
+        counter = (counter<0)?0:counter;
+        
         __delay_ms(500);
     }
 

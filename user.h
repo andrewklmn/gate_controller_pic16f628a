@@ -29,8 +29,8 @@
 #define OFF 1
 
 // Time for rollback action in the overtorque event.
-#define ROLL_BACK_TIME 1500
-
+#define ROLL_BACK_TIME  1500
+#define SLEEP_DELAY     20
 
 /* TODO Application specific user parameters used in user.c may go here */
 

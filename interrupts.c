@@ -16,6 +16,7 @@
 
 extern char overtorgue_flag;
 extern char movement_direction;
+extern int counter;
 
 /******************************************************************************/
 /* Interrupt Routines                                                         */
@@ -80,7 +81,8 @@ void __interrupt () my_isr_routine (void) {
             //gate closed
             MOVE_FORWARD_SIGNAL  = OFF;
             movement_direction = BACK;
-            
+            counter=SLEEP_DELAY;
+        
         } else if (GATE_OPENED_SENSOR==ON) {
             //stop the movement
             MOVE_BACKWARD_SIGNAL = OFF;

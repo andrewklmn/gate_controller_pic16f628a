@@ -1154,6 +1154,7 @@ void InitApp(void);
 
 char overtorgue_flag = 1;
 char movement_direction;
+int counter = 20;
 
 
 
@@ -1180,8 +1181,11 @@ void main(void)
 
             RA4 = 1;
             RA3 = 1;
-            RA2 = 0;
-
+            if (counter>0) {
+                RA2 = 0;
+            } else {
+                RA2 = 1;
+            };
         } else if(RB4==1 && RB5==0) {
 
             RA4=0;
@@ -1201,6 +1205,10 @@ void main(void)
             RA3= 1;
             RA2 = 1;
         };
+
+        counter--;
+        counter = (counter<0)?0:counter;
+
         _delay((unsigned long)((500)*(4000000/4000.0)));
     }
 

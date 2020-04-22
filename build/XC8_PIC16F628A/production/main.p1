@@ -148,122 +148,151 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;main.c: 22: char movement_direction;
 [v _movement_direction `uc ~T0 @X0 1 e ]
+"23
+[; ;main.c: 23: int counter = 20;
+[v _counter `i ~T0 @X0 1 e ]
+[i _counter
+-> 20 `i
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"29
-[; ;main.c: 29: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
 "30
-[; ;main.c: 30: {
+[; ;main.c: 30: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"31
+[; ;main.c: 31: {
 {
 [e :U _main ]
 [f ]
-"32
-[; ;main.c: 32:     ConfigureOscillator();
+"33
+[; ;main.c: 33:     ConfigureOscillator();
 [e ( _ConfigureOscillator ..  ]
-"35
-[; ;main.c: 35:     InitApp();
+"36
+[; ;main.c: 36:     InitApp();
 [e ( _InitApp ..  ]
-"38
-[; ;main.c: 38:     while(1)
-[e :U 53 ]
 "39
-[; ;main.c: 39:     {
-{
+[; ;main.c: 39:     while(1)
+[e :U 53 ]
 "40
-[; ;main.c: 40:         if (overtorgue_flag==0 || (RB4==0 && RB5==0)) {
-[e $ ! || == -> _overtorgue_flag `i -> 0 `i && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 0 `i 55  ]
+[; ;main.c: 40:     {
 {
 "41
-[; ;main.c: 41:             RA4 = 1;
-[e = _RA4 -> -> 1 `i `b ]
+[; ;main.c: 41:         if (overtorgue_flag==0 || (RB4==0 && RB5==0)) {
+[e $ ! || == -> _overtorgue_flag `i -> 0 `i && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 0 `i 55  ]
+{
 "42
-[; ;main.c: 42:             RA3= 1;
-[e = _RA3 -> -> 1 `i `b ]
+[; ;main.c: 42:             RA4 = 1;
+[e = _RA4 -> -> 1 `i `b ]
 "43
-[; ;main.c: 43:             RA2 = !RA2;
+[; ;main.c: 43:             RA3= 1;
+[e = _RA3 -> -> 1 `i `b ]
+"44
+[; ;main.c: 44:             RA2 = !RA2;
 [e = _RA2 ! _RA2 ]
-"45
-[; ;main.c: 45:         } else if(RB4==0 && RB5==1) {
+"46
+[; ;main.c: 46:         } else if(RB4==0 && RB5==1) {
 }
 [e $U 56  ]
 [e :U 55 ]
 [e $ ! && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 1 `i 57  ]
 {
-"47
-[; ;main.c: 47:             RA4 = 1;
-[e = _RA4 -> -> 1 `i `b ]
 "48
-[; ;main.c: 48:             RA3 = 1;
-[e = _RA3 -> -> 1 `i `b ]
+[; ;main.c: 48:             RA4 = 1;
+[e = _RA4 -> -> 1 `i `b ]
 "49
-[; ;main.c: 49:             RA2 = 0;
-[e = _RA2 -> -> 0 `i `b ]
+[; ;main.c: 49:             RA3 = 1;
+[e = _RA3 -> -> 1 `i `b ]
+"50
+[; ;main.c: 50:             if (counter>0) {
+[e $ ! > _counter -> 0 `i 58  ]
+{
 "51
-[; ;main.c: 51:         } else if(RB4==1 && RB5==0) {
+[; ;main.c: 51:                 RA2 = 0;
+[e = _RA2 -> -> 0 `i `b ]
+"52
+[; ;main.c: 52:             } else {
 }
-[e $U 58  ]
-[e :U 57 ]
-[e $ ! && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 0 `i 59  ]
+[e $U 59  ]
+[e :U 58 ]
 {
 "53
-[; ;main.c: 53:             RA4=0;
-[e = _RA4 -> -> 0 `i `b ]
-"54
-[; ;main.c: 54:             RA3=1;
-[e = _RA3 -> -> 1 `i `b ]
-"55
-[; ;main.c: 55:             RA2=1;
+[; ;main.c: 53:                 RA2 = 1;
 [e = _RA2 -> -> 1 `i `b ]
-"57
-[; ;main.c: 57:         } else if(RB4==1
+"54
+[; ;main.c: 54:             };
+}
+[e :U 59 ]
+"55
+[; ;main.c: 55:         } else if(RB4==1 && RB5==0) {
 }
 [e $U 60  ]
-[e :U 59 ]
-[e $ ! && && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 1 `i == -> _RB7 `i -> 0 `i 61  ]
-"59
-[; ;main.c: 59:                     && RB7==0) {
+[e :U 57 ]
+[e $ ! && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 0 `i 61  ]
 {
-"61
-[; ;main.c: 61:             RA4 = 1;
-[e = _RA4 -> -> 1 `i `b ]
-"62
-[; ;main.c: 62:             RA3=!RA3;
-[e = _RA3 ! _RA3 ]
-"63
-[; ;main.c: 63:             RA2 = 1;
+"57
+[; ;main.c: 57:             RA4=0;
+[e = _RA4 -> -> 0 `i `b ]
+"58
+[; ;main.c: 58:             RA3=1;
+[e = _RA3 -> -> 1 `i `b ]
+"59
+[; ;main.c: 59:             RA2=1;
 [e = _RA2 -> -> 1 `i `b ]
-"65
-[; ;main.c: 65:         } else {
+"61
+[; ;main.c: 61:         } else if(RB4==1
 }
 [e $U 62  ]
 [e :U 61 ]
+[e $ ! && && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 1 `i == -> _RB7 `i -> 0 `i 63  ]
+"63
+[; ;main.c: 63:                     && RB7==0) {
 {
-"66
-[; ;main.c: 66:             RA4 = 1;
+"65
+[; ;main.c: 65:             RA4 = 1;
 [e = _RA4 -> -> 1 `i `b ]
+"66
+[; ;main.c: 66:             RA3=!RA3;
+[e = _RA3 ! _RA3 ]
 "67
-[; ;main.c: 67:             RA3= 1;
-[e = _RA3 -> -> 1 `i `b ]
-"68
-[; ;main.c: 68:             RA2 = 1;
+[; ;main.c: 67:             RA2 = 1;
 [e = _RA2 -> -> 1 `i `b ]
 "69
-[; ;main.c: 69:         };
+[; ;main.c: 69:         } else {
 }
+[e $U 64  ]
+[e :U 63 ]
+{
+"70
+[; ;main.c: 70:             RA4 = 1;
+[e = _RA4 -> -> 1 `i `b ]
+"71
+[; ;main.c: 71:             RA3= 1;
+[e = _RA3 -> -> 1 `i `b ]
+"72
+[; ;main.c: 72:             RA2 = 1;
+[e = _RA2 -> -> 1 `i `b ]
+"73
+[; ;main.c: 73:         };
+}
+[e :U 64 ]
 [e :U 62 ]
 [e :U 60 ]
-[e :U 58 ]
 [e :U 56 ]
-"70
-[; ;main.c: 70:         _delay((unsigned long)((500)*(4000000/4000.0)));
+"75
+[; ;main.c: 75:         counter--;
+[e -- _counter -> 1 `i ]
+"76
+[; ;main.c: 76:         counter = (counter<0)?0:counter;
+[e = _counter ? < _counter -> 0 `i : -> 0 `i _counter ]
+"78
+[; ;main.c: 78:         _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"71
-[; ;main.c: 71:     }
+"79
+[; ;main.c: 79:     }
 }
 [e :U 52 ]
 [e $U 53  ]
 [e :U 54 ]
-"73
-[; ;main.c: 73: }
+"81
+[; ;main.c: 81: }
 [e :UE 51 ]
 }

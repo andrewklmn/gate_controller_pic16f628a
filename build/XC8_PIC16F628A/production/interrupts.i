@@ -1150,7 +1150,8 @@ void InitApp(void);
 
 extern char overtorgue_flag;
 extern char movement_direction;
-# 29 "interrupts.c"
+extern int counter;
+# 30 "interrupts.c"
 void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
 
@@ -1205,6 +1206,7 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
             RA0 = 1;
             movement_direction = 0;
+            counter=20;
 
         } else if (RB5==0) {
 
