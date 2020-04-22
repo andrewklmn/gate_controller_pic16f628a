@@ -14,6 +14,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "310
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 310: extern volatile unsigned char INTCON __attribute__((address(0x00B)));
 [v _INTCON `Vuc ~T0 @X0 0 e@11 ]
+"1428
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1428: extern volatile __bit INTEDG __attribute__((address(0x40E)));
+[v _INTEDG `Vb ~T0 @X0 0 e@1038 ]
 "1464
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1464: extern volatile __bit RA2 __attribute__((address(0x2A)));
 [v _RA2 `Vb ~T0 @X0 0 e@42 ]
@@ -170,65 +173,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;user.c: 38:     INTCON = 0b10011000;
 [e = _INTCON -> -> 152 `i `uc ]
-"41
-[; ;user.c: 41:     RA2 = 0;
-[e = _RA2 -> -> 0 `i `b ]
+"39
+[; ;user.c: 39:     INTEDG = 0;
+[e = _INTEDG -> -> 0 `i `b ]
 "42
-[; ;user.c: 42:     _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;user.c: 42:     RA2 = 0;
+[e = _RA2 -> -> 0 `i `b ]
 "43
-[; ;user.c: 43:     RA3 = 0;
-[e = _RA3 -> -> 0 `i `b ]
+[; ;user.c: 43:     _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "44
-[; ;user.c: 44:     _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;user.c: 44:     RA3 = 0;
+[e = _RA3 -> -> 0 `i `b ]
 "45
-[; ;user.c: 45:     RA2 = 1;
-[e = _RA2 -> -> 1 `i `b ]
-"46
-[; ;user.c: 46:     RA3 = 1;
-[e = _RA3 -> -> 1 `i `b ]
-"47
-[; ;user.c: 47:     RA4 = 0;
-[e = _RA4 -> -> 0 `i `b ]
-"48
-[; ;user.c: 48:     _delay((unsigned long)((500)*(4000000/4000.0)));
+[; ;user.c: 45:     _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"46
+[; ;user.c: 46:     RA2 = 1;
+[e = _RA2 -> -> 1 `i `b ]
+"47
+[; ;user.c: 47:     RA3 = 1;
+[e = _RA3 -> -> 1 `i `b ]
+"48
+[; ;user.c: 48:     RA4 = 0;
+[e = _RA4 -> -> 0 `i `b ]
 "49
-[; ;user.c: 49:     RA4 = 1;
+[; ;user.c: 49:     _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"50
+[; ;user.c: 50:     RA4 = 1;
 [e = _RA4 -> -> 1 `i `b ]
-"51
-[; ;user.c: 51:     if (RB4==0) {
+"52
+[; ;user.c: 52:     if (RB4==0) {
 [e $ ! == -> _RB4 `i -> 0 `i 52  ]
 {
-"52
-[; ;user.c: 52:         movement_direction = 0;
-[e = _movement_direction -> -> 0 `i `uc ]
 "53
-[; ;user.c: 53:     } else if (RB5==0) {
+[; ;user.c: 53:         movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"54
+[; ;user.c: 54:     } else if (RB5==0) {
 }
 [e $U 53  ]
 [e :U 52 ]
 [e $ ! == -> _RB5 `i -> 0 `i 54  ]
 {
-"54
-[; ;user.c: 54:         movement_direction = 1;
-[e = _movement_direction -> -> 1 `i `uc ]
 "55
-[; ;user.c: 55:     } else {
+[; ;user.c: 55:         movement_direction = 1;
+[e = _movement_direction -> -> 1 `i `uc ]
+"56
+[; ;user.c: 56:     } else {
 }
 [e $U 55  ]
 [e :U 54 ]
 {
-"56
-[; ;user.c: 56:         movement_direction = 0;
-[e = _movement_direction -> -> 0 `i `uc ]
 "57
-[; ;user.c: 57:     };
+[; ;user.c: 57:         movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"58
+[; ;user.c: 58:     };
 }
 [e :U 55 ]
 [e :U 53 ]
-"60
-[; ;user.c: 60: }
+"61
+[; ;user.c: 61: }
 [e :UE 51 ]
 }

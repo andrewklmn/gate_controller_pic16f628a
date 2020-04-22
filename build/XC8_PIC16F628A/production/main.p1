@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 ./system.h
 [; ;./system.h: 20: void ConfigureOscillator(void);
 [v _ConfigureOscillator `(v ~T0 @X0 0 ef ]
-"39 ./user.h
-[; ;./user.h: 39: void InitApp(void);
+"43 ./user.h
+[; ;./user.h: 43: void InitApp(void);
 [v _InitApp `(v ~T0 @X0 0 ef ]
 "1494 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1494: extern volatile __bit RB4 __attribute__((address(0x34)));

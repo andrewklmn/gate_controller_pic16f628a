@@ -35,12 +35,15 @@ void __interrupt () my_isr_routine (void) {
     
     if(INTF){
        // CHANGE_STATE_BUTTON was pressed by user
-        if (MOVE_FORWARD_SIGNAL==ON || MOVE_BACKWARD_SIGNAL==ON ) {
+        overtorgue_flag = OFF;
+        if (GATE_CLOSED_SENSOR==ON && GATE_OPENED_SENSOR==ON ) {
+            MOVE_FORWARD_SIGNAL = OFF; 
+            MOVE_BACKWARD_SIGNAL = OFF;
+        } else if (MOVE_FORWARD_SIGNAL==ON || MOVE_BACKWARD_SIGNAL==ON ) {
             MOVE_FORWARD_SIGNAL = OFF; 
             MOVE_BACKWARD_SIGNAL = OFF;
             movement_direction = (movement_direction==BACK)?FORWARD:BACK;
         } else {
-            overtorgue_flag = OFF;
             if(movement_direction==FORWARD) {
                 MOVE_BACKWARD_SIGNAL = OFF;
                 MOVE_FORWARD_SIGNAL  = ON;
@@ -53,24 +56,26 @@ void __interrupt () my_isr_routine (void) {
     } else if (RBIF){
         // state of gates was changed
         if (OVERTORQUE_DETECTED_SENSOR==ON) {
-            //stop the movement
-            MOVE_FORWARD_SIGNAL  = OFF;
-            MOVE_BACKWARD_SIGNAL = OFF;
-            overtorgue_flag=ON;
-            
             //action for rollback
             if (movement_direction==FORWARD) {
+                MOVE_FORWARD_SIGNAL  = OFF;
                 MOVE_BACKWARD_SIGNAL = ON;
                 __delay_ms(ROLL_BACK_TIME);
                 MOVE_BACKWARD_SIGNAL = OFF;
+                overtorgue_flag=ON;
                 movement_direction = BACK;
             } else {
-                MOVE_FORWARD_SIGNAL = ON;
-                __delay_ms(ROLL_BACK_TIME);
-                MOVE_FORWARD_SIGNAL = OFF;
-                movement_direction = FORWARD;
+                MOVE_BACKWARD_SIGNAL = OFF;
+                overtorgue_flag=ON;
+                movement_direction = BACK;
             }; 
                     
+        } else if (GATE_CLOSED_SENSOR==ON && GATE_OPENED_SENSOR==ON) {
+            //gate closed
+            MOVE_FORWARD_SIGNAL  = OFF;
+            MOVE_BACKWARD_SIGNAL = OFF;
+            overtorgue_flag=ON;
+
         } else if (GATE_CLOSED_SENSOR==ON) {
             //gate closed
             MOVE_FORWARD_SIGNAL  = OFF;

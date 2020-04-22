@@ -1145,7 +1145,7 @@ typedef uint16_t uintptr_t;
 void ConfigureOscillator(void);
 # 16 "main.c" 2
 # 1 "./user.h" 1
-# 39 "./user.h"
+# 43 "./user.h"
 void InitApp(void);
 # 17 "main.c" 2
 

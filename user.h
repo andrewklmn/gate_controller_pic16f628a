@@ -25,7 +25,7 @@
 #define BACK    0
 
 // button and signal definition (inverted for open drain connection)
-#define ON   0
+#define ON  0
 #define OFF 1
 
 // Time for rollback action in the overtorque event.

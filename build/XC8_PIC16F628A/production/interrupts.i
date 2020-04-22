@@ -1144,7 +1144,7 @@ typedef uint16_t uintptr_t;
 void ConfigureOscillator(void);
 # 15 "interrupts.c" 2
 # 1 "./user.h" 1
-# 39 "./user.h"
+# 43 "./user.h"
 void InitApp(void);
 # 16 "interrupts.c" 2
 
@@ -1160,12 +1160,15 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
     if(INTF){
 
-        if (RA0==0 || RA1==0 ) {
+        overtorgue_flag = 1;
+        if (RB4==0 && RB5==0 ) {
+            RA0 = 1;
+            RA1 = 1;
+        } else if (RA0==0 || RA1==0 ) {
             RA0 = 1;
             RA1 = 1;
             movement_direction = (movement_direction==0)?1:0;
         } else {
-            overtorgue_flag = 1;
             if(movement_direction==1) {
                 RA1 = 1;
                 RA0 = 0;
@@ -1179,22 +1182,24 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
         if (RB6==0) {
 
-            RA0 = 1;
-            RA1 = 1;
-            overtorgue_flag=0;
-
-
             if (movement_direction==1) {
+                RA0 = 1;
                 RA1 = 0;
                 _delay((unsigned long)((1500)*(4000000/4000.0)));
                 RA1 = 1;
+                overtorgue_flag=0;
                 movement_direction = 0;
             } else {
-                RA0 = 0;
-                _delay((unsigned long)((1500)*(4000000/4000.0)));
-                RA0 = 1;
-                movement_direction = 1;
+                RA1 = 1;
+                overtorgue_flag=0;
+                movement_direction = 0;
             };
+
+        } else if (RB4==0 && RB5==0) {
+
+            RA0 = 1;
+            RA1 = 1;
+            overtorgue_flag=0;
 
         } else if (RB4==0) {
 

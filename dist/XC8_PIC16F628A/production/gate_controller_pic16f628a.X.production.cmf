@@ -11,17 +11,17 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcXwY5y9L.o
+$/tmp/xcXCWnQCE.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 A A 1 2
 config CONFIG 0 2007 2007 1 2
 $dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 cinit CODE 0 B B 5 2
-text1 CODE 0 DC DC 55 2
-text2 CODE 0 132 132 1 2
-text3 CODE 0 10 10 77 2
-idataCOMMON CODE 0 131 131 1 2
-maintext CODE 0 87 87 55 2
+text1 CODE 0 8D 8D 5A 2
+text2 CODE 0 13D 13D 1 2
+text3 CODE 0 10 10 7D 2
+idataCOMMON CODE 0 13C 13C 1 2
+maintext CODE 0 E7 E7 55 2
 cstackCOMMON COMMON 1 70 70 5 1
 cstackBANK0 BANK0 1 20 20 6 1
 intentry CODE 0 4 4 6 2
@@ -40,13 +40,13 @@ BANK0 26-6F 1
 BANK1 A0-EF 1
 BANK2 120-14F 1
 CONST 1-3 2
-CONST 133-7FF 2
+CONST 13E-7FF 2
 ENTRY 1-3 2
-ENTRY 133-7FF 2
+ENTRY 13E-7FF 2
 IDLOC 2000-2003 2
 STACK A0-EF 1
 CODE 1-3 2
-CODE 133-7FF 2
+CODE 13E-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -54,9 +54,9 @@ SFR3 180-1EF 1
 COMMON 77-7D 1
 EEDATA 2100-217F 2
 STRCODE 1-3 2
-STRCODE 133-7FF 2
+STRCODE 13E-7FF 2
 STRING 1-3 2
-STRING 133-7FF 2
+STRING 13E-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -71,100 +71,106 @@ STRING 133-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-B cinit CODE >601:/tmp/xcXlhDaxN.s
-B cinit CODE >604:/tmp/xcXlhDaxN.s
-B cinit CODE >624:/tmp/xcXlhDaxN.s
-C cinit CODE >625:/tmp/xcXlhDaxN.s
-D cinit CODE >629:/tmp/xcXlhDaxN.s
-E cinit CODE >635:/tmp/xcXlhDaxN.s
-E cinit CODE >637:/tmp/xcXlhDaxN.s
-F cinit CODE >638:/tmp/xcXlhDaxN.s
+B cinit CODE >603:/tmp/xcXtIqyHr.s
+B cinit CODE >606:/tmp/xcXtIqyHr.s
+B cinit CODE >626:/tmp/xcXtIqyHr.s
+C cinit CODE >627:/tmp/xcXtIqyHr.s
+D cinit CODE >631:/tmp/xcXtIqyHr.s
+E cinit CODE >637:/tmp/xcXtIqyHr.s
+E cinit CODE >639:/tmp/xcXtIqyHr.s
+F cinit CODE >640:/tmp/xcXtIqyHr.s
 4 intentry CODE >29:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
 10 text3 CODE >29:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
 10 text3 CODE >36:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
 14 text3 CODE >38:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-1E text3 CODE >39:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-1F text3 CODE >40:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-20 text3 CODE >41:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-2A text3 CODE >42:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+16 text3 CODE >39:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+20 text3 CODE >40:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+21 text3 CODE >41:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+22 text3 CODE >42:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
 2B text3 CODE >43:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-2D text3 CODE >44:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-32 text3 CODE >45:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-33 text3 CODE >46:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-34 text3 CODE >47:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-35 text3 CODE >48:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-36 text3 CODE >49:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-37 text3 CODE >51:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-37 text3 CODE >52:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-38 text3 CODE >53:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-3D text3 CODE >55:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-43 text3 CODE >57:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-44 text3 CODE >58:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-45 text3 CODE >59:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-46 text3 CODE >62:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-4B text3 CODE >63:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-4C text3 CODE >64:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-59 text3 CODE >65:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-5C text3 CODE >66:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-5D text3 CODE >67:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-5E text3 CODE >68:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-5F text3 CODE >69:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-6C text3 CODE >70:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-6F text3 CODE >71:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-72 text3 CODE >74:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-76 text3 CODE >76:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-78 text3 CODE >79:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+2C text3 CODE >44:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+2D text3 CODE >45:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+37 text3 CODE >46:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+38 text3 CODE >47:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+3D text3 CODE >48:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+3E text3 CODE >49:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+3F text3 CODE >50:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+40 text3 CODE >51:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+41 text3 CODE >52:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+42 text3 CODE >54:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+42 text3 CODE >55:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+43 text3 CODE >56:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+48 text3 CODE >58:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+4E text3 CODE >60:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+53 text3 CODE >61:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+54 text3 CODE >62:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+55 text3 CODE >63:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+62 text3 CODE >64:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+65 text3 CODE >65:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+66 text3 CODE >66:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+67 text3 CODE >67:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+68 text3 CODE >68:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+69 text3 CODE >69:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+6A text3 CODE >70:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+6C text3 CODE >73:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+74 text3 CODE >75:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+75 text3 CODE >76:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+76 text3 CODE >77:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+77 text3 CODE >79:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
 7C text3 CODE >81:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-7D text3 CODE >82:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-7F text3 CODE >83:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-7F text3 CODE >84:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-80 text3 CODE >86:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
-132 text2 CODE >18:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
-132 text2 CODE >25:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
-DC text1 CODE >25:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-DC text1 CODE >28:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-E0 text1 CODE >31:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-E3 text1 CODE >32:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-E5 text1 CODE >35:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-E9 text1 CODE >38:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-EB text1 CODE >41:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-EC text1 CODE >42:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-FB text1 CODE >43:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-FE text1 CODE >44:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-10D text1 CODE >45:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-110 text1 CODE >46:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-111 text1 CODE >47:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-112 text1 CODE >48:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-121 text1 CODE >49:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-124 text1 CODE >51:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-128 text1 CODE >52:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-129 text1 CODE >53:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-12E text1 CODE >54:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-130 text1 CODE >60:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
-87 maintext CODE >29:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-87 maintext CODE >32:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-88 maintext CODE >35:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-89 maintext CODE >40:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-98 maintext CODE >41:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-9B maintext CODE >42:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-9C maintext CODE >43:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-9E maintext CODE >45:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-A7 maintext CODE >47:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-A8 maintext CODE >48:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-A9 maintext CODE >49:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-AA maintext CODE >51:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-B3 maintext CODE >53:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-B4 maintext CODE >54:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-B5 maintext CODE >55:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-B6 maintext CODE >57:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-C3 maintext CODE >61:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-C4 maintext CODE >62:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-C6 maintext CODE >63:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-C7 maintext CODE >65:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-C8 maintext CODE >66:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-C9 maintext CODE >67:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-CA maintext CODE >68:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
-CB maintext CODE >70:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+7E text3 CODE >84:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+82 text3 CODE >86:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+83 text3 CODE >87:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+85 text3 CODE >88:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+85 text3 CODE >89:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+86 text3 CODE >91:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+13D text2 CODE >18:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
+13D text2 CODE >25:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
+8D text1 CODE >25:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+8D text1 CODE >28:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+91 text1 CODE >31:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+94 text1 CODE >32:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+96 text1 CODE >35:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+9A text1 CODE >38:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+9C text1 CODE >39:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+9F text1 CODE >42:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+A2 text1 CODE >43:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+B1 text1 CODE >44:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+B4 text1 CODE >45:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+C3 text1 CODE >46:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+C6 text1 CODE >47:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+C7 text1 CODE >48:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+C8 text1 CODE >49:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+D7 text1 CODE >50:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+DA text1 CODE >52:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+DE text1 CODE >53:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+DF text1 CODE >54:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+E4 text1 CODE >55:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+E6 text1 CODE >61:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+E7 maintext CODE >29:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+E7 maintext CODE >32:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+E8 maintext CODE >35:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+E9 maintext CODE >40:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+F8 maintext CODE >41:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+FB maintext CODE >42:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+FC maintext CODE >43:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+FE maintext CODE >45:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+107 maintext CODE >47:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+108 maintext CODE >48:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+109 maintext CODE >49:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+10A maintext CODE >51:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+113 maintext CODE >53:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+114 maintext CODE >54:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+115 maintext CODE >55:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+116 maintext CODE >57:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+123 maintext CODE >61:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+124 maintext CODE >62:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+126 maintext CODE >63:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+127 maintext CODE >65:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+128 maintext CODE >66:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+129 maintext CODE >67:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+12A maintext CODE >68:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+12B maintext CODE >70:/home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -187,40 +193,41 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _INTF 59 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 _RBIF 58 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXwY5y9L.o
-_main 10E 0 CODE 0 maintext dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXCWnQCE.o
+_main 1CE 0 CODE 0 maintext dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 btemp 7E 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 _movement_direction 75 0 COMMON 1 bssCOMMON dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-start 14 0 CODE 0 init /tmp/xcXwY5y9L.o
+start 14 0 CODE 0 init /tmp/xcXCWnQCE.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __size_of_main 0 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_ConfigureOscillator 266 0 CODE 0 text2 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+__end_of_ConfigureOscillator 27C 0 CODE 0 text2 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-intlevel0 0 0 ENTRY 0 functab /tmp/xcXwY5y9L.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcXwY5y9L.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcXwY5y9L.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcXwY5y9L.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcXwY5y9L.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcXwY5y9L.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXCWnQCE.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXCWnQCE.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXCWnQCE.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXCWnQCE.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXCWnQCE.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXCWnQCE.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-_InitApp 1B8 0 CODE 0 text1 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+_InitApp 11A 0 CODE 0 text1 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 wtemp0 7E 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__pidataCOMMON 262 0 CODE 0 idataCOMMON dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+__pidataCOMMON 278 0 CODE 0 idataCOMMON dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __LdataCOMMON 0 0 ABS 0 dataCOMMON -
 __Lmaintext 0 0 ABS 0 maintext -
 _INTCON B 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-___stackhi 0 0 ABS 0 - /tmp/xcXwY5y9L.o
-___stacklo 0 0 ABS 0 - /tmp/xcXwY5y9L.o
+_INTEDG 40E 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+___stackhi 0 0 ABS 0 - /tmp/xcXCWnQCE.o
+___stacklo 0 0 ABS 0 - /tmp/xcXCWnQCE.o
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 start_initialization 16 0 CODE 0 cinit dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __CFG_FOSC$INTOSCIO 0 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcXwY5y9L.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXCWnQCE.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -273,10 +280,10 @@ __S3 0 0 ABS 0 - -
 saved_w 7E 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXwY5y9L.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXCWnQCE.o
 __size_of_InitApp 0 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-__end_of_my_isr_routine 10E 0 CODE 0 text3 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-__pmaintext 10E 0 CODE 0 maintext dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+__end_of_my_isr_routine 11A 0 CODE 0 text3 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+__pmaintext 1CE 0 CODE 0 maintext dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
@@ -295,10 +302,10 @@ _overtorgue_flag 76 0 COMMON 1 dataCOMMON dist/XC8_PIC16F628A/production/gate_co
 __Hintentry 14 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 2 0 CODE 0 reset_vec -
-__ptext1 1B8 0 CODE 0 text1 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-__ptext2 264 0 CODE 0 text2 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+__ptext1 11A 0 CODE 0 text1 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+__ptext2 27A 0 CODE 0 text2 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __ptext3 20 0 CODE 0 text3 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-__end_of_InitApp 262 0 CODE 0 text1 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+__end_of_InitApp 1CE 0 CODE 0 text1 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __size_of_ConfigureOscillator 0 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
@@ -308,9 +315,9 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 __Hend_init 16 0 CODE 0 end_init -
-__end_of_main 1B8 0 CODE 0 maintext dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+__end_of_main 278 0 CODE 0 maintext dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 _CMCON 1F 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
-_ConfigureOscillator 264 0 CODE 0 text2 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
+_ConfigureOscillator 27A 0 CODE 0 text2 dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 _PORTA 5 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 _TRISA 85 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
 _TRISB 86 0 ABS 0 - dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o
@@ -349,7 +356,7 @@ __pdataCOMMON 76 0 COMMON 1 dataCOMMON dist/XC8_PIC16F628A/production/gate_contr
 %SEGMENTS
 cstackCOMMON 1 70 70 7 1
 cstackBANK0 1 20 20 6 1
-intentry 0 4 8 12F 2
+intentry 0 4 8 13A 2
 reset_vec 0 0 0 1 2
 config 0 2007 400E 1 2
 # %NOTES Section

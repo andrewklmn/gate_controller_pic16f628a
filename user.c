@@ -36,6 +36,7 @@ void InitApp(void)
     
     /* Enable interrupts */
     INTCON = 0b10011000;
+    INTEDG = 0;
     
     
     RED_LIGHT = ON;
