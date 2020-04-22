@@ -1,0 +1,234 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"767 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 767: extern volatile unsigned char CMCON __attribute__((address(0x01F)));
+[v _CMCON `Vuc ~T0 @X0 0 e@31 ]
+"907
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 907: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"969
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 969: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"166
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"310
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 310: extern volatile unsigned char INTCON __attribute__((address(0x00B)));
+[v _INTCON `Vuc ~T0 @X0 0 e@11 ]
+"1464
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1464: extern volatile __bit RA2 __attribute__((address(0x2A)));
+[v _RA2 `Vb ~T0 @X0 0 e@42 ]
+[v F461 `(v ~T0 @X0 1 tf1`ul ]
+"92 /opt/microchip/xc8/v2.10/pic/include/pic.h
+[v __delay `JF461 ~T0 @X0 0 e ]
+[p i __delay ]
+"1467 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1467: extern volatile __bit RA3 __attribute__((address(0x2B)));
+[v _RA3 `Vb ~T0 @X0 0 e@43 ]
+"1470
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1470: extern volatile __bit RA4 __attribute__((address(0x2C)));
+[v _RA4 `Vb ~T0 @X0 0 e@44 ]
+"1494
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1494: extern volatile __bit RB4 __attribute__((address(0x34)));
+[v _RB4 `Vb ~T0 @X0 0 e@52 ]
+"23 user.c
+[; ;user.c: 23: extern char movement_direction;
+[v _movement_direction `uc ~T0 @X0 0 e ]
+"1497 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1497: extern volatile __bit RB5 __attribute__((address(0x35)));
+[v _RB5 `Vb ~T0 @X0 0 e@53 ]
+"54 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"230
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 230: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"292
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 292: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"312
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 312: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"390
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 390: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"447
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 447: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"454
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 454: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"461
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 461: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"468
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 468: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"527
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 527: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"534
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 534: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"605
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 605: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"612
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 612: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"619
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 619: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"626
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 626: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"684
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 684: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"755
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 755: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"762
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 762: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"769
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 769: __asm("CMCON equ 01Fh");
+[; <" CMCON equ 01Fh ;# ">
+"839
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 839: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"909
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 909: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"971
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 971: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1033
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1033: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1090
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1090: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1139
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1139: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1146
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1146: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"1203
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1203: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"1210
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1210: __asm("EEDATA equ 09Ah");
+[; <" EEDATA equ 09Ah ;# ">
+"1217
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1217: __asm("EEADR equ 09Bh");
+[; <" EEADR equ 09Bh ;# ">
+"1224
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1224: __asm("EECON1 equ 09Ch");
+[; <" EECON1 equ 09Ch ;# ">
+"1262
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1262: __asm("EECON2 equ 09Dh");
+[; <" EECON2 equ 09Dh ;# ">
+"1269
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
+[; <" VRCON equ 09Fh ;# ">
+"25 user.c
+[; ;user.c: 25: void InitApp(void)
+[v _InitApp `(v ~T0 @X0 1 ef ]
+"26
+[; ;user.c: 26: {
+{
+[e :U _InitApp ]
+[f ]
+"28
+[; ;user.c: 28:     CMCON = 0b111;
+[e = _CMCON -> -> 7 `i `uc ]
+"31
+[; ;user.c: 31:     TRISA = 0b00000000;
+[e = _TRISA -> -> 0 `i `uc ]
+"32
+[; ;user.c: 32:     TRISB = 0b11110001;
+[e = _TRISB -> -> 241 `i `uc ]
+"35
+[; ;user.c: 35:     PORTA = 0b11111111;
+[e = _PORTA -> -> 255 `i `uc ]
+"38
+[; ;user.c: 38:     INTCON = 0b10011000;
+[e = _INTCON -> -> 152 `i `uc ]
+"41
+[; ;user.c: 41:     RA2 = 0;
+[e = _RA2 -> -> 0 `i `b ]
+"42
+[; ;user.c: 42:     _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"43
+[; ;user.c: 43:     RA3 = 0;
+[e = _RA3 -> -> 0 `i `b ]
+"44
+[; ;user.c: 44:     _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"45
+[; ;user.c: 45:     RA2 = 1;
+[e = _RA2 -> -> 1 `i `b ]
+"46
+[; ;user.c: 46:     RA3 = 1;
+[e = _RA3 -> -> 1 `i `b ]
+"47
+[; ;user.c: 47:     RA4 = 0;
+[e = _RA4 -> -> 0 `i `b ]
+"48
+[; ;user.c: 48:     _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"49
+[; ;user.c: 49:     RA4 = 1;
+[e = _RA4 -> -> 1 `i `b ]
+"51
+[; ;user.c: 51:     if (RB4==0) {
+[e $ ! == -> _RB4 `i -> 0 `i 52  ]
+{
+"52
+[; ;user.c: 52:         movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"53
+[; ;user.c: 53:     } else if (RB5==0) {
+}
+[e $U 53  ]
+[e :U 52 ]
+[e $ ! == -> _RB5 `i -> 0 `i 54  ]
+{
+"54
+[; ;user.c: 54:         movement_direction = 1;
+[e = _movement_direction -> -> 1 `i `uc ]
+"55
+[; ;user.c: 55:     } else {
+}
+[e $U 55  ]
+[e :U 54 ]
+{
+"56
+[; ;user.c: 56:         movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"57
+[; ;user.c: 57:     };
+}
+[e :U 55 ]
+[e :U 53 ]
+"60
+[; ;user.c: 60: }
+[e :UE 51 ]
+}

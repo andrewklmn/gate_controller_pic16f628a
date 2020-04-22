@@ -1,0 +1,77 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F628A ]
+[d frameptr 0 ]
+"10 /opt/microchip/xc8/v2.10/pic/sources/c90/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 /opt/microchip/xc8/v2.10/pic/sources/c90/common/Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 /opt/microchip/xc8/v2.10/pic/sources/c90/pic/__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"29 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+[v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
+"29 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+[v _main main `(v  1 e 1 0 ]
+"18 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
+[v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
+"25 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+[v _InitApp InitApp `(v  1 e 1 0 ]
+"166 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"310
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"767
+[v _CMCON CMCON `VEuc  1 e 1 @31 ]
+"907
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"969
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1431
+[v _INTF INTF `VEb  1 e 0 @89 ]
+"1458
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"1461
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"1464
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"1467
+[v _RA3 RA3 `VEb  1 e 0 @43 ]
+"1470
+[v _RA4 RA4 `VEb  1 e 0 @44 ]
+"1494
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"1497
+[v _RB5 RB5 `VEb  1 e 0 @53 ]
+"1500
+[v _RB6 RB6 `VEb  1 e 0 @54 ]
+"1503
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
+"1509
+[v _RBIF RBIF `VEb  1 e 0 @88 ]
+"21 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+[v _overtorgue_flag overtorgue_flag `uc  1 e 1 0 ]
+"22
+[v _movement_direction movement_direction `uc  1 e 1 0 ]
+"29
+[v _main main `(v  1 e 1 0 ]
+{
+"73
+} 0
+"25 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
+[v _InitApp InitApp `(v  1 e 1 0 ]
+{
+"60
+} 0
+"18 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
+[v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
+{
+"25
+} 0
+"29 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+[v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
+{
+"86
+} 0

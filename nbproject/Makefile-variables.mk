@@ -1,0 +1,27 @@
+#
+# Generated - do not edit!
+#
+# NOCDDL
+#
+CND_BASEDIR=`pwd`
+# HT_PIC16F54 configuration
+CND_ARTIFACT_DIR_HT_PIC16F54=dist/HT_PIC16F54/production
+CND_ARTIFACT_NAME_HT_PIC16F54=gate_controller_pic16f628a.X.production.hex
+CND_ARTIFACT_PATH_HT_PIC16F54=dist/HT_PIC16F54/production/gate_controller_pic16f628a.X.production.hex
+CND_PACKAGE_DIR_HT_PIC16F54=${CND_DISTDIR}/HT_PIC16F54/package
+CND_PACKAGE_NAME_HT_PIC16F54=gatecontrollerpic16f628a.x.tar
+CND_PACKAGE_PATH_HT_PIC16F54=${CND_DISTDIR}/HT_PIC16F54/package/gatecontrollerpic16f628a.x.tar
+# XC8_PIC16F54 configuration
+CND_ARTIFACT_DIR_XC8_PIC16F54=dist/XC8_PIC16F54/production
+CND_ARTIFACT_NAME_XC8_PIC16F54=gate_controller_pic16f628a.X.production.hex
+CND_ARTIFACT_PATH_XC8_PIC16F54=dist/XC8_PIC16F54/production/gate_controller_pic16f628a.X.production.hex
+CND_PACKAGE_DIR_XC8_PIC16F54=${CND_DISTDIR}/XC8_PIC16F54/package
+CND_PACKAGE_NAME_XC8_PIC16F54=gatecontrollerpic16f628a.x.tar
+CND_PACKAGE_PATH_XC8_PIC16F54=${CND_DISTDIR}/XC8_PIC16F54/package/gatecontrollerpic16f628a.x.tar
+# XC8_PIC16F628A configuration
+CND_ARTIFACT_DIR_XC8_PIC16F628A=dist/XC8_PIC16F628A/production
+CND_ARTIFACT_NAME_XC8_PIC16F628A=gate_controller_pic16f628a.X.production.hex
+CND_ARTIFACT_PATH_XC8_PIC16F628A=dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.hex
+CND_PACKAGE_DIR_XC8_PIC16F628A=${CND_DISTDIR}/XC8_PIC16F628A/package
+CND_PACKAGE_NAME_XC8_PIC16F628A=gatecontrollerpic16f628a.x.tar
+CND_PACKAGE_PATH_XC8_PIC16F628A=${CND_DISTDIR}/XC8_PIC16F628A/package/gatecontrollerpic16f628a.x.tar
