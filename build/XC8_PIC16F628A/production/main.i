@@ -1172,10 +1172,23 @@ void main(void)
 
     while(1)
     {
-        if (overtorgue_flag==0 || (RB4==0 && RB5==0)) {
+        if (overtorgue_flag==0 ) {
+
             RA4 = 1;
             RA3= 1;
             RA2 = !RA2;
+
+        } else if (RB4==0 && RB5==0) {
+
+            RA4 = 1;
+            RA3= 1;
+            RA2 = 0;
+            _delay((unsigned long)((200)*(4000000/4000.0)));
+            RA2 = 1;
+            _delay((unsigned long)((200)*(4000000/4000.0)));
+            RA2 = 0;
+            _delay((unsigned long)((200)*(4000000/4000.0)));
+            RA2 = 1;
 
         } else if(RB4==0 && RB5==1) {
 
@@ -1198,6 +1211,14 @@ void main(void)
 
             RA4 = 1;
             RA3=!RA3;
+            RA2 = 1;
+
+        } else if(RB4==1
+                    && RB5==1
+                    && RB7==1) {
+
+            RA4 = 1;
+            RA3=0;
             RA2 = 1;
 
         } else {

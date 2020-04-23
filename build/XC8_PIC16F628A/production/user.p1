@@ -203,38 +203,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50
 [; ;user.c: 50:     RA4 = 1;
 [e = _RA4 -> -> 1 `i `b ]
-"52
-[; ;user.c: 52:     if (RB4==0) {
+"53
+[; ;user.c: 53:     if (RB4==0) {
 [e $ ! == -> _RB4 `i -> 0 `i 52  ]
 {
-"53
-[; ;user.c: 53:         movement_direction = 0;
-[e = _movement_direction -> -> 0 `i `uc ]
 "54
-[; ;user.c: 54:     } else if (RB5==0) {
+[; ;user.c: 54:         movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"55
+[; ;user.c: 55:     } else if (RB5==0) {
 }
 [e $U 53  ]
 [e :U 52 ]
 [e $ ! == -> _RB5 `i -> 0 `i 54  ]
 {
-"55
-[; ;user.c: 55:         movement_direction = 1;
-[e = _movement_direction -> -> 1 `i `uc ]
 "56
-[; ;user.c: 56:     } else {
+[; ;user.c: 56:         movement_direction = 1;
+[e = _movement_direction -> -> 1 `i `uc ]
+"57
+[; ;user.c: 57:     } else {
 }
 [e $U 55  ]
 [e :U 54 ]
 {
-"57
-[; ;user.c: 57:         movement_direction = 0;
-[e = _movement_direction -> -> 0 `i `uc ]
 "58
-[; ;user.c: 58:     };
+[; ;user.c: 58:         movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"59
+[; ;user.c: 59:     };
 }
 [e :U 55 ]
 [e :U 53 ]
-"61
-[; ;user.c: 61: }
+"62
+[; ;user.c: 62: }
 [e :UE 51 ]
 }

@@ -49,6 +49,7 @@ void InitApp(void)
     __delay_ms(500);
     GREEN_LIGHT = 1;
     
+    
     if (GATE_CLOSED_SENSOR==0) {
         movement_direction = BACK;
     } else if (GATE_OPENED_SENSOR==0) {

@@ -1183,6 +1183,7 @@ void InitApp(void)
     _delay((unsigned long)((500)*(4000000/4000.0)));
     RA4 = 1;
 
+
     if (RB4==0) {
         movement_direction = 0;
     } else if (RB5==0) {

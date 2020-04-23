@@ -292,53 +292,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 77:             RA1 = 1;
 [e = _RA1 -> -> 1 `i `b ]
 "78
-[; ;interrupts.c: 78:             overtorgue_flag=0;
-[e = _overtorgue_flag -> -> 0 `i `uc ]
-"80
-[; ;interrupts.c: 80:         } else if (RB4==0) {
+[; ;interrupts.c: 78:         } else if (RB4==0) {
 }
 [e $U 66  ]
 [e :U 65 ]
 [e $ ! == -> _RB4 `i -> 0 `i 67  ]
 {
-"82
-[; ;interrupts.c: 82:             RA0 = 1;
+"80
+[; ;interrupts.c: 80:             RA0 = 1;
 [e = _RA0 -> -> 1 `i `b ]
-"83
-[; ;interrupts.c: 83:             movement_direction = 0;
+"81
+[; ;interrupts.c: 81:             movement_direction = 0;
 [e = _movement_direction -> -> 0 `i `uc ]
-"84
-[; ;interrupts.c: 84:             counter=20;
+"82
+[; ;interrupts.c: 82:             counter=20;
 [e = _counter -> 20 `i ]
-"86
-[; ;interrupts.c: 86:         } else if (RB5==0) {
+"84
+[; ;interrupts.c: 84:         } else if (RB5==0) {
 }
 [e $U 68  ]
 [e :U 67 ]
 [e $ ! == -> _RB5 `i -> 0 `i 69  ]
 {
-"88
-[; ;interrupts.c: 88:             RA1 = 1;
+"86
+[; ;interrupts.c: 86:             RA1 = 1;
 [e = _RA1 -> -> 1 `i `b ]
-"89
-[; ;interrupts.c: 89:             movement_direction = 1;
+"87
+[; ;interrupts.c: 87:             movement_direction = 1;
 [e = _movement_direction -> -> 1 `i `uc ]
-"90
-[; ;interrupts.c: 90:         };
+"88
+[; ;interrupts.c: 88:         };
 }
 [e :U 69 ]
 [e :U 68 ]
 [e :U 66 ]
 [e :U 64 ]
-"91
-[; ;interrupts.c: 91:         RBIF=0;
+"89
+[; ;interrupts.c: 89:         RBIF=0;
 [e = _RBIF -> -> 0 `i `b ]
-"92
-[; ;interrupts.c: 92:     };
+"90
+[; ;interrupts.c: 90:     };
 }
 [e :U 60 ]
 [e :U 59 ]
-"93
-[; ;interrupts.c: 93: }
+"91
+[; ;interrupts.c: 91: }
 [e :UE 51 ]
 }

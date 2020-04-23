@@ -75,8 +75,6 @@ void __interrupt () my_isr_routine (void) {
             //gate closed
             MOVE_FORWARD_SIGNAL  = OFF;
             MOVE_BACKWARD_SIGNAL = OFF;
-            overtorgue_flag=ON;
-
         } else if (GATE_CLOSED_SENSOR==ON) {
             //gate closed
             MOVE_FORWARD_SIGNAL  = OFF;

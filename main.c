@@ -38,10 +38,23 @@ void main(void)
 
     while(1)
     {
-        if (overtorgue_flag==ON || (GATE_CLOSED_SENSOR==ON  && GATE_OPENED_SENSOR==ON)) {
+        if (overtorgue_flag==ON ) {
+            
             GREEN_LIGHT = OFF;
             YELLOW_LIGHT= OFF;
             RED_LIGHT = !RED_LIGHT;
+            
+        } else if (GATE_CLOSED_SENSOR==ON  && GATE_OPENED_SENSOR==ON) {
+            
+            GREEN_LIGHT = OFF;
+            YELLOW_LIGHT= OFF;
+            RED_LIGHT = ON;
+            __delay_ms(200);
+            RED_LIGHT = OFF;
+            __delay_ms(200);
+            RED_LIGHT = ON;
+            __delay_ms(200);
+            RED_LIGHT = OFF;
             
         } else if(GATE_CLOSED_SENSOR==ON && GATE_OPENED_SENSOR==OFF) {
             
@@ -64,6 +77,14 @@ void main(void)
             
             GREEN_LIGHT = OFF;
             YELLOW_LIGHT=!YELLOW_LIGHT;
+            RED_LIGHT = OFF;
+            
+        } else if(GATE_CLOSED_SENSOR==OFF 
+                    && GATE_OPENED_SENSOR==OFF 
+                    && GATE_IS_RUNNING_SENSOR==OFF) {
+            
+            GREEN_LIGHT = OFF;
+            YELLOW_LIGHT=ON;
             RED_LIGHT = OFF;
             
         } else {

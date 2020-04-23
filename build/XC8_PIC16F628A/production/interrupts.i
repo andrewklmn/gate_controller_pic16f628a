@@ -1200,8 +1200,6 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
             RA0 = 1;
             RA1 = 1;
-            overtorgue_flag=0;
-
         } else if (RB4==0) {
 
             RA0 = 1;
