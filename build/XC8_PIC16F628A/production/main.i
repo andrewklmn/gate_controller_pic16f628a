@@ -1145,9 +1145,11 @@ typedef uint16_t uintptr_t;
 void ConfigureOscillator(void);
 # 16 "main.c" 2
 # 1 "./user.h" 1
-# 43 "./user.h"
+# 50 "./user.h"
 void InitApp(void);
 # 17 "main.c" 2
+
+
 
 
 
@@ -1155,6 +1157,8 @@ void InitApp(void);
 char overtorgue_flag = 1;
 char movement_direction;
 int counter = 20;
+char must_be_closed = 1;
+
 
 
 
@@ -1169,66 +1173,81 @@ void main(void)
 
     InitApp();
 
+    if (RB4==0) {
+        movement_direction = 0;
+        must_be_closed = 0;
+    };
 
     while(1)
     {
         if (overtorgue_flag==0 ) {
 
-            RA4 = 1;
-            RA3= 1;
+            RA7 = 0;
+            RA3= 0;
             RA2 = !RA2;
 
         } else if (RB4==0 && RB5==0) {
 
-            RA4 = 1;
-            RA3= 1;
-            RA2 = 0;
-            _delay((unsigned long)((200)*(4000000/4000.0)));
+            RA7 = 0;
+            RA3= 0;
             RA2 = 1;
             _delay((unsigned long)((200)*(4000000/4000.0)));
             RA2 = 0;
             _delay((unsigned long)((200)*(4000000/4000.0)));
             RA2 = 1;
+            _delay((unsigned long)((200)*(4000000/4000.0)));
+            RA2 = 0;
 
         } else if(RB4==0 && RB5==1) {
 
-            RA4 = 1;
-            RA3 = 1;
+            RA7 = 0;
+            RA3 = 0;
             if (counter>0) {
-                RA2 = 0;
-            } else {
                 RA2 = 1;
+            } else {
+                RA2 = 0;
+                RA6 = 0;
             };
         } else if(RB4==1 && RB5==0) {
 
-            RA4=0;
-            RA3=1;
-            RA2=1;
+            RA7=1;
+            RA3=0;
+            RA2=0;
 
         } else if(RB4==1
                     && RB5==1
                     && RB7==0) {
 
-            RA4 = 1;
+            if (RA1==1) {
+                RA7 = 1;
+            } else {
+                RA7 = 0;
+            };
             RA3=!RA3;
-            RA2 = 1;
-
+            if (RA0==1) {
+                RA2 = 1;
+            } else {
+                RA2 = 0;
+            };
         } else if(RB4==1
                     && RB5==1
                     && RB7==1) {
 
-            RA4 = 1;
-            RA3=0;
-            RA2 = 1;
+            RA7 = 0;
+            RA3=!RA3;
+
+            RA2 = 0;
 
         } else {
-            RA4 = 1;
-            RA3= 1;
-            RA2 = 1;
+            RA7 = 0;
+            RA3= 0;
+            RA2 = 0;
         };
 
         counter--;
-        counter = (counter<0)?0:counter;
+        if (counter<0) {
+            counter = 0;
+        };
 
         _delay((unsigned long)((500)*(4000000/4000.0)));
     }

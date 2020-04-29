@@ -6,7 +6,7 @@
 #define _XTAL_FREQ 4000000
 
 /* Microcontroller MIPs (FCY) */
-#define SYS_FREQ        4000000L
+#define SYS_FREQ        500000L
 #define FCY             SYS_FREQ/4
 
 /******************************************************************************/

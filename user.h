@@ -11,25 +11,32 @@
 #define OVERTORQUE_DETECTED_SENSOR RB6
 #define GATE_IS_RUNNING_SENSOR     RB7
 
-// outputs for motor control
+// output for motor control
 #define MOVE_FORWARD_SIGNAL        RA0
 #define MOVE_BACKWARD_SIGNAL       RA1
 
-// signal lights pin
+// output for motor and remote power control
+#define MOTOR_POWER_SWITCH         RA6
+
+// output signal lights pin
 #define RED_LIGHT           RA2
 #define YELLOW_LIGHT        RA3
-#define GREEN_LIGHT         RA4
+#define GREEN_LIGHT         RA7
 
 // direction of movement 
 #define FORWARD 1
 #define BACK    0
 
-// button and signal definition (inverted for open drain connection)
+// button state definition (inverted for open drain connection)
 #define ON  0
 #define OFF 1
 
+// signal  definition for motor and lights control
+#define TURN_ON  1
+#define TURN_OFF 0
+
 // Time for rollback action in the overtorque event.
-#define ROLL_BACK_TIME  1500
+#define ROLL_BACK_TIME  200
 #define SLEEP_DELAY     20
 
 /* TODO Application specific user parameters used in user.c may go here */

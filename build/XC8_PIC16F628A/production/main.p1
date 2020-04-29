@@ -3,21 +3,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 ./system.h
 [; ;./system.h: 20: void ConfigureOscillator(void);
 [v _ConfigureOscillator `(v ~T0 @X0 0 ef ]
-"43 ./user.h
-[; ;./user.h: 43: void InitApp(void);
+"50 ./user.h
+[; ;./user.h: 50: void InitApp(void);
 [v _InitApp `(v ~T0 @X0 0 ef ]
-"1470 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
-[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1470: extern volatile __bit RA4 __attribute__((address(0x2C)));
-[v _RA4 `Vb ~T0 @X0 0 e@44 ]
+"1494 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1494: extern volatile __bit RB4 __attribute__((address(0x34)));
+[v _RB4 `Vb ~T0 @X0 0 e@52 ]
+"1479
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1479: extern volatile __bit RA7 __attribute__((address(0x2F)));
+[v _RA7 `Vb ~T0 @X0 0 e@47 ]
 "1467
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1467: extern volatile __bit RA3 __attribute__((address(0x2B)));
 [v _RA3 `Vb ~T0 @X0 0 e@43 ]
 "1464
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1464: extern volatile __bit RA2 __attribute__((address(0x2A)));
 [v _RA2 `Vb ~T0 @X0 0 e@42 ]
-"1494
-[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1494: extern volatile __bit RB4 __attribute__((address(0x34)));
-[v _RB4 `Vb ~T0 @X0 0 e@52 ]
 "1497
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1497: extern volatile __bit RB5 __attribute__((address(0x35)));
 [v _RB5 `Vb ~T0 @X0 0 e@53 ]
@@ -25,9 +25,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 /opt/microchip/xc8/v2.10/pic/include/pic.h
 [v __delay `JF461 ~T0 @X0 0 e ]
 [p i __delay ]
-"1503 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
+"1476 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1476: extern volatile __bit RA6 __attribute__((address(0x2E)));
+[v _RA6 `Vb ~T0 @X0 0 e@46 ]
+"1503
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1503: extern volatile __bit RB7 __attribute__((address(0x37)));
 [v _RB7 `Vb ~T0 @X0 0 e@55 ]
+"1461
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1461: extern volatile __bit RA1 __attribute__((address(0x29)));
+[v _RA1 `Vb ~T0 @X0 0 e@41 ]
+"1458
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1458: extern volatile __bit RA0 __attribute__((address(0x28)));
+[v _RA0 `Vb ~T0 @X0 0 e@40 ]
 "54 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -139,214 +148,279 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1269
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
 [; <" VRCON equ 09Fh ;# ">
-"21 main.c
-[; ;main.c: 21: char overtorgue_flag = 1;
+"23 main.c
+[; ;main.c: 23: char overtorgue_flag = 1;
 [v _overtorgue_flag `uc ~T0 @X0 1 e ]
 [i _overtorgue_flag
 -> -> 1 `i `uc
 ]
-"22
-[; ;main.c: 22: char movement_direction;
+"24
+[; ;main.c: 24: char movement_direction;
 [v _movement_direction `uc ~T0 @X0 1 e ]
-"23
-[; ;main.c: 23: int counter = 20;
+"25
+[; ;main.c: 25: int counter = 20;
 [v _counter `i ~T0 @X0 1 e ]
 [i _counter
 -> 20 `i
 ]
+"26
+[; ;main.c: 26: char must_be_closed = 1;
+[v _must_be_closed `uc ~T0 @X0 1 e ]
+[i _must_be_closed
+-> -> 1 `i `uc
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"30
-[; ;main.c: 30: void main(void)
+"34
+[; ;main.c: 34: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"31
-[; ;main.c: 31: {
+"35
+[; ;main.c: 35: {
 {
 [e :U _main ]
 [f ]
-"33
-[; ;main.c: 33:     ConfigureOscillator();
+"37
+[; ;main.c: 37:     ConfigureOscillator();
 [e ( _ConfigureOscillator ..  ]
-"36
-[; ;main.c: 36:     InitApp();
-[e ( _InitApp ..  ]
-"39
-[; ;main.c: 39:     while(1)
-[e :U 53 ]
 "40
-[; ;main.c: 40:     {
-{
-"41
-[; ;main.c: 41:         if (overtorgue_flag==0 ) {
-[e $ ! == -> _overtorgue_flag `i -> 0 `i 55  ]
+[; ;main.c: 40:     InitApp();
+[e ( _InitApp ..  ]
+"42
+[; ;main.c: 42:     if (RB4==0) {
+[e $ ! == -> _RB4 `i -> 0 `i 52  ]
 {
 "43
-[; ;main.c: 43:             RA4 = 1;
-[e = _RA4 -> -> 1 `i `b ]
+[; ;main.c: 43:         movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
 "44
-[; ;main.c: 44:             RA3= 1;
-[e = _RA3 -> -> 1 `i `b ]
+[; ;main.c: 44:         must_be_closed = 0;
+[e = _must_be_closed -> -> 0 `i `uc ]
 "45
-[; ;main.c: 45:             RA2 = !RA2;
-[e = _RA2 ! _RA2 ]
-"47
-[; ;main.c: 47:         } else if (RB4==0 && RB5==0) {
+[; ;main.c: 45:     };
 }
-[e $U 56  ]
-[e :U 55 ]
-[e $ ! && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 0 `i 57  ]
+[e :U 52 ]
+"47
+[; ;main.c: 47:     while(1)
+[e :U 54 ]
+"48
+[; ;main.c: 48:     {
 {
 "49
-[; ;main.c: 49:             RA4 = 1;
-[e = _RA4 -> -> 1 `i `b ]
-"50
-[; ;main.c: 50:             RA3= 1;
-[e = _RA3 -> -> 1 `i `b ]
+[; ;main.c: 49:         if (overtorgue_flag==0 ) {
+[e $ ! == -> _overtorgue_flag `i -> 0 `i 56  ]
+{
 "51
-[; ;main.c: 51:             RA2 = 0;
-[e = _RA2 -> -> 0 `i `b ]
+[; ;main.c: 51:             RA7 = 0;
+[e = _RA7 -> -> 0 `i `b ]
 "52
-[; ;main.c: 52:             _delay((unsigned long)((200)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 52:             RA3= 0;
+[e = _RA3 -> -> 0 `i `b ]
 "53
-[; ;main.c: 53:             RA2 = 1;
-[e = _RA2 -> -> 1 `i `b ]
-"54
-[; ;main.c: 54:             _delay((unsigned long)((200)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 53:             RA2 = !RA2;
+[e = _RA2 ! _RA2 ]
 "55
-[; ;main.c: 55:             RA2 = 0;
-[e = _RA2 -> -> 0 `i `b ]
-"56
-[; ;main.c: 56:             _delay((unsigned long)((200)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 55:         } else if (RB4==0 && RB5==0) {
+}
+[e $U 57  ]
+[e :U 56 ]
+[e $ ! && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 0 `i 58  ]
+{
 "57
-[; ;main.c: 57:             RA2 = 1;
-[e = _RA2 -> -> 1 `i `b ]
+[; ;main.c: 57:             RA7 = 0;
+[e = _RA7 -> -> 0 `i `b ]
+"58
+[; ;main.c: 58:             RA3= 0;
+[e = _RA3 -> -> 0 `i `b ]
 "59
-[; ;main.c: 59:         } else if(RB4==0 && RB5==1) {
-}
-[e $U 58  ]
-[e :U 57 ]
-[e $ ! && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 1 `i 59  ]
-{
-"61
-[; ;main.c: 61:             RA4 = 1;
-[e = _RA4 -> -> 1 `i `b ]
-"62
-[; ;main.c: 62:             RA3 = 1;
-[e = _RA3 -> -> 1 `i `b ]
-"63
-[; ;main.c: 63:             if (counter>0) {
-[e $ ! > _counter -> 0 `i 60  ]
-{
-"64
-[; ;main.c: 64:                 RA2 = 0;
-[e = _RA2 -> -> 0 `i `b ]
-"65
-[; ;main.c: 65:             } else {
-}
-[e $U 61  ]
-[e :U 60 ]
-{
-"66
-[; ;main.c: 66:                 RA2 = 1;
+[; ;main.c: 59:             RA2 = 1;
 [e = _RA2 -> -> 1 `i `b ]
+"60
+[; ;main.c: 60:             _delay((unsigned long)((200)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"61
+[; ;main.c: 61:             RA2 = 0;
+[e = _RA2 -> -> 0 `i `b ]
+"62
+[; ;main.c: 62:             _delay((unsigned long)((200)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"63
+[; ;main.c: 63:             RA2 = 1;
+[e = _RA2 -> -> 1 `i `b ]
+"64
+[; ;main.c: 64:             _delay((unsigned long)((200)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"65
+[; ;main.c: 65:             RA2 = 0;
+[e = _RA2 -> -> 0 `i `b ]
 "67
-[; ;main.c: 67:             };
+[; ;main.c: 67:         } else if(RB4==0 && RB5==1) {
 }
-[e :U 61 ]
-"68
-[; ;main.c: 68:         } else if(RB4==1 && RB5==0) {
+[e $U 59  ]
+[e :U 58 ]
+[e $ ! && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 1 `i 60  ]
+{
+"69
+[; ;main.c: 69:             RA7 = 0;
+[e = _RA7 -> -> 0 `i `b ]
+"70
+[; ;main.c: 70:             RA3 = 0;
+[e = _RA3 -> -> 0 `i `b ]
+"71
+[; ;main.c: 71:             if (counter>0) {
+[e $ ! > _counter -> 0 `i 61  ]
+{
+"72
+[; ;main.c: 72:                 RA2 = 1;
+[e = _RA2 -> -> 1 `i `b ]
+"73
+[; ;main.c: 73:             } else {
 }
 [e $U 62  ]
-[e :U 59 ]
-[e $ ! && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 0 `i 63  ]
+[e :U 61 ]
 {
-"70
-[; ;main.c: 70:             RA4=0;
-[e = _RA4 -> -> 0 `i `b ]
-"71
-[; ;main.c: 71:             RA3=1;
-[e = _RA3 -> -> 1 `i `b ]
-"72
-[; ;main.c: 72:             RA2=1;
-[e = _RA2 -> -> 1 `i `b ]
 "74
-[; ;main.c: 74:         } else if(RB4==1
-}
-[e $U 64  ]
-[e :U 63 ]
-[e $ ! && && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 1 `i == -> _RB7 `i -> 0 `i 65  ]
+[; ;main.c: 74:                 RA2 = 0;
+[e = _RA2 -> -> 0 `i `b ]
+"75
+[; ;main.c: 75:                 RA6 = 0;
+[e = _RA6 -> -> 0 `i `b ]
 "76
-[; ;main.c: 76:                     && RB7==0) {
-{
-"78
-[; ;main.c: 78:             RA4 = 1;
-[e = _RA4 -> -> 1 `i `b ]
-"79
-[; ;main.c: 79:             RA3=!RA3;
-[e = _RA3 ! _RA3 ]
-"80
-[; ;main.c: 80:             RA2 = 1;
-[e = _RA2 -> -> 1 `i `b ]
-"82
-[; ;main.c: 82:         } else if(RB4==1
+[; ;main.c: 76:             };
 }
-[e $U 66  ]
-[e :U 65 ]
-[e $ ! && && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 1 `i == -> _RB7 `i -> 1 `i 67  ]
-"84
-[; ;main.c: 84:                     && RB7==1) {
+[e :U 62 ]
+"77
+[; ;main.c: 77:         } else if(RB4==1 && RB5==0) {
+}
+[e $U 63  ]
+[e :U 60 ]
+[e $ ! && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 0 `i 64  ]
 {
-"86
-[; ;main.c: 86:             RA4 = 1;
-[e = _RA4 -> -> 1 `i `b ]
-"87
-[; ;main.c: 87:             RA3=0;
+"79
+[; ;main.c: 79:             RA7=1;
+[e = _RA7 -> -> 1 `i `b ]
+"80
+[; ;main.c: 80:             RA3=0;
 [e = _RA3 -> -> 0 `i `b ]
+"81
+[; ;main.c: 81:             RA2=0;
+[e = _RA2 -> -> 0 `i `b ]
+"83
+[; ;main.c: 83:         } else if(RB4==1
+}
+[e $U 65  ]
+[e :U 64 ]
+[e $ ! && && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 1 `i == -> _RB7 `i -> 0 `i 66  ]
+"85
+[; ;main.c: 85:                     && RB7==0) {
+{
+"87
+[; ;main.c: 87:             if (RA1==1) {
+[e $ ! == -> _RA1 `i -> 1 `i 67  ]
+{
 "88
-[; ;main.c: 88:             RA2 = 1;
-[e = _RA2 -> -> 1 `i `b ]
-"90
-[; ;main.c: 90:         } else {
+[; ;main.c: 88:                 RA7 = 1;
+[e = _RA7 -> -> 1 `i `b ]
+"89
+[; ;main.c: 89:             } else {
 }
 [e $U 68  ]
 [e :U 67 ]
 {
+"90
+[; ;main.c: 90:                 RA7 = 0;
+[e = _RA7 -> -> 0 `i `b ]
 "91
-[; ;main.c: 91:             RA4 = 1;
-[e = _RA4 -> -> 1 `i `b ]
-"92
-[; ;main.c: 92:             RA3= 1;
-[e = _RA3 -> -> 1 `i `b ]
-"93
-[; ;main.c: 93:             RA2 = 1;
-[e = _RA2 -> -> 1 `i `b ]
-"94
-[; ;main.c: 94:         };
+[; ;main.c: 91:             };
 }
 [e :U 68 ]
-[e :U 66 ]
-[e :U 64 ]
-[e :U 62 ]
-[e :U 58 ]
-[e :U 56 ]
-"96
-[; ;main.c: 96:         counter--;
-[e -- _counter -> 1 `i ]
-"97
-[; ;main.c: 97:         counter = (counter<0)?0:counter;
-[e = _counter ? < _counter -> 0 `i : -> 0 `i _counter ]
-"99
-[; ;main.c: 99:         _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"100
-[; ;main.c: 100:     }
+"92
+[; ;main.c: 92:             RA3=!RA3;
+[e = _RA3 ! _RA3 ]
+"93
+[; ;main.c: 93:             if (RA0==1) {
+[e $ ! == -> _RA0 `i -> 1 `i 69  ]
+{
+"94
+[; ;main.c: 94:                 RA2 = 1;
+[e = _RA2 -> -> 1 `i `b ]
+"95
+[; ;main.c: 95:             } else {
 }
-[e :U 52 ]
-[e $U 53  ]
-[e :U 54 ]
+[e $U 70  ]
+[e :U 69 ]
+{
+"96
+[; ;main.c: 96:                 RA2 = 0;
+[e = _RA2 -> -> 0 `i `b ]
+"97
+[; ;main.c: 97:             };
+}
+[e :U 70 ]
+"98
+[; ;main.c: 98:         } else if(RB4==1
+}
+[e $U 71  ]
+[e :U 66 ]
+[e $ ! && && == -> _RB4 `i -> 1 `i == -> _RB5 `i -> 1 `i == -> _RB7 `i -> 1 `i 72  ]
+"100
+[; ;main.c: 100:                     && RB7==1) {
+{
 "102
-[; ;main.c: 102: }
+[; ;main.c: 102:             RA7 = 0;
+[e = _RA7 -> -> 0 `i `b ]
+"103
+[; ;main.c: 103:             RA3=!RA3;
+[e = _RA3 ! _RA3 ]
+"105
+[; ;main.c: 105:             RA2 = 0;
+[e = _RA2 -> -> 0 `i `b ]
+"107
+[; ;main.c: 107:         } else {
+}
+[e $U 73  ]
+[e :U 72 ]
+{
+"108
+[; ;main.c: 108:             RA7 = 0;
+[e = _RA7 -> -> 0 `i `b ]
+"109
+[; ;main.c: 109:             RA3= 0;
+[e = _RA3 -> -> 0 `i `b ]
+"110
+[; ;main.c: 110:             RA2 = 0;
+[e = _RA2 -> -> 0 `i `b ]
+"111
+[; ;main.c: 111:         };
+}
+[e :U 73 ]
+[e :U 71 ]
+[e :U 65 ]
+[e :U 63 ]
+[e :U 59 ]
+[e :U 57 ]
+"113
+[; ;main.c: 113:         counter--;
+[e -- _counter -> 1 `i ]
+"114
+[; ;main.c: 114:         if (counter<0) {
+[e $ ! < _counter -> 0 `i 74  ]
+{
+"115
+[; ;main.c: 115:             counter = 0;
+[e = _counter -> 0 `i ]
+"116
+[; ;main.c: 116:         };
+}
+[e :U 74 ]
+"118
+[; ;main.c: 118:         _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"119
+[; ;main.c: 119:     }
+}
+[e :U 53 ]
+[e $U 54  ]
+[e :U 55 ]
+"121
+[; ;main.c: 121: }
 [e :UE 51 ]
 }

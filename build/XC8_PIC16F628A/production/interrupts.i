@@ -1144,14 +1144,16 @@ typedef uint16_t uintptr_t;
 void ConfigureOscillator(void);
 # 15 "interrupts.c" 2
 # 1 "./user.h" 1
-# 43 "./user.h"
+# 50 "./user.h"
 void InitApp(void);
 # 16 "interrupts.c" 2
 
 extern char overtorgue_flag;
 extern char movement_direction;
 extern int counter;
-# 30 "interrupts.c"
+
+extern char must_be_closed;
+# 32 "interrupts.c"
 void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
 
@@ -1161,56 +1163,93 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
     if(INTF){
 
-        overtorgue_flag = 1;
         if (RB4==0 && RB5==0 ) {
-            RA0 = 1;
-            RA1 = 1;
-        } else if (RA0==0 || RA1==0 ) {
-            RA0 = 1;
-            RA1 = 1;
+            RA0 = 0;
+            RA1 = 0;
+        } else if (RA0==1 || RA1==1 ) {
+            RA0 = 0;
+            RA1 = 0;
             movement_direction = (movement_direction==0)?1:0;
         } else {
             if(movement_direction==1) {
-                RA1 = 1;
-                RA0 = 0;
+                if (RB4==1) {
+                    RA1 = 0;
+                    RA0 = 1;
+                } else {
+                    RA1 = 1;
+                    RA0 = 0;
+                    movement_direction = 0;
+                };
             } else {
-                RA1 = 0;
-                RA0 = 1;
+                if (RB5==1) {
+                    RA1 = 1;
+                    RA0 = 0;
+                } else {
+                    RA1 = 0;
+                    RA0 = 1;
+                    movement_direction = 1;
+                };
             };
         };
+
+        overtorgue_flag = 1;
+        must_be_closed = 1;
+        RA6 = 1;
+        counter=20;
+
+        PORTB;
         INTF=0;
     } else if (RBIF){
 
         if (RB6==0) {
 
+            must_be_closed = 1;
             if (movement_direction==1) {
-                RA0 = 1;
-                RA1 = 0;
-                _delay((unsigned long)((1500)*(4000000/4000.0)));
-                RA1 = 1;
+                if (RB5==0) {
+                    RA0 = 0;
+                    RA1 = 0;
+                } else {
+                    RA0 = 0;
+                    RA1 = 1;
+                    _delay((unsigned long)((200)*(4000000/4000.0)));
+                    RA1 = 0;
+                    movement_direction = 0;
+                };
                 overtorgue_flag=0;
-                movement_direction = 0;
             } else {
-                RA1 = 1;
+                RA1 = 0;
+                RA0 = 0;
                 overtorgue_flag=0;
                 movement_direction = 0;
             };
 
         } else if (RB4==0 && RB5==0) {
 
-            RA0 = 1;
-            RA1 = 1;
+            RA0 = 0;
+            RA1 = 0;
+
         } else if (RB4==0) {
 
-            RA0 = 1;
+            RA0 = 0;
             movement_direction = 0;
+            must_be_closed = 0;
             counter=20;
 
         } else if (RB5==0) {
 
-            RA1 = 1;
+            RA1 = 0;
+            movement_direction = 1;
+
+        } else if (RB4==1
+                        && movement_direction== 0
+                        && must_be_closed == 0
+                        && RA1==0) {
+
+            RA6 = 1;
+            RA0 = 1;
             movement_direction = 1;
         };
+        PORTB;
         RBIF=0;
     };
 }

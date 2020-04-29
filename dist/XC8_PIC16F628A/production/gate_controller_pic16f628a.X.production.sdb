@@ -11,9 +11,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"30 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+"32 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
-"30 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+"34 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
 [v _main main `(v  1 e 1 0 ]
 "18 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
 [v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
@@ -21,6 +21,8 @@
 [v _InitApp InitApp `(v  1 e 1 0 ]
 "166 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "310
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
 "767
@@ -41,8 +43,10 @@
 [v _RA2 RA2 `VEb  1 e 0 @42 ]
 "1467
 [v _RA3 RA3 `VEb  1 e 0 @43 ]
-"1470
-[v _RA4 RA4 `VEb  1 e 0 @44 ]
+"1476
+[v _RA6 RA6 `VEb  1 e 0 @46 ]
+"1479
+[v _RA7 RA7 `VEb  1 e 0 @47 ]
 "1494
 [v _RB4 RB4 `VEb  1 e 0 @52 ]
 "1497
@@ -53,29 +57,33 @@
 [v _RB7 RB7 `VEb  1 e 0 @55 ]
 "1509
 [v _RBIF RBIF `VEb  1 e 0 @88 ]
-"21 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
+"1722
+[v _nRBPU nRBPU `VEb  1 e 0 @1039 ]
+"23 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/main.c
 [v _overtorgue_flag overtorgue_flag `uc  1 e 1 0 ]
-"22
+"24
 [v _movement_direction movement_direction `uc  1 e 1 0 ]
-"23
+"25
 [v _counter counter `i  1 e 2 0 ]
-"30
+"26
+[v _must_be_closed must_be_closed `uc  1 e 1 0 ]
+"34
 [v _main main `(v  1 e 1 0 ]
 {
-"102
+"121
 } 0
 "25 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
 {
-"62
+"66
 } 0
 "18 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
 [v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
 {
 "25
 } 0
-"30 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
+"32 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 {
-"91
+"130
 } 0

@@ -18,6 +18,8 @@ extern char overtorgue_flag;
 extern char movement_direction;
 extern int counter;
 
+extern char must_be_closed;
+
 /******************************************************************************/
 /* Interrupt Routines                                                         */
 /******************************************************************************/
@@ -36,56 +38,93 @@ void __interrupt () my_isr_routine (void) {
     
     if(INTF){
        // CHANGE_STATE_BUTTON was pressed by user
-        overtorgue_flag = OFF;
         if (GATE_CLOSED_SENSOR==ON && GATE_OPENED_SENSOR==ON ) {
-            MOVE_FORWARD_SIGNAL = OFF; 
-            MOVE_BACKWARD_SIGNAL = OFF;
-        } else if (MOVE_FORWARD_SIGNAL==ON || MOVE_BACKWARD_SIGNAL==ON ) {
-            MOVE_FORWARD_SIGNAL = OFF; 
-            MOVE_BACKWARD_SIGNAL = OFF;
+            MOVE_FORWARD_SIGNAL = TURN_OFF; 
+            MOVE_BACKWARD_SIGNAL = TURN_OFF;
+        } else if (MOVE_FORWARD_SIGNAL==TURN_ON || MOVE_BACKWARD_SIGNAL==TURN_ON ) {
+            MOVE_FORWARD_SIGNAL = TURN_OFF; 
+            MOVE_BACKWARD_SIGNAL = TURN_OFF;
             movement_direction = (movement_direction==BACK)?FORWARD:BACK;
         } else {
             if(movement_direction==FORWARD) {
-                MOVE_BACKWARD_SIGNAL = OFF;
-                MOVE_FORWARD_SIGNAL  = ON;
+                if (GATE_CLOSED_SENSOR==OFF) {
+                    MOVE_BACKWARD_SIGNAL = TURN_OFF;
+                    MOVE_FORWARD_SIGNAL  = TURN_ON;
+                } else {
+                    MOVE_BACKWARD_SIGNAL = TURN_ON;
+                    MOVE_FORWARD_SIGNAL  = TURN_OFF;
+                    movement_direction = BACK;
+                };
             } else {
-                MOVE_BACKWARD_SIGNAL = ON;
-                MOVE_FORWARD_SIGNAL  = OFF;
+                if (GATE_OPENED_SENSOR==OFF) {
+                    MOVE_BACKWARD_SIGNAL = TURN_ON;
+                    MOVE_FORWARD_SIGNAL  = TURN_OFF;                
+                } else {
+                    MOVE_BACKWARD_SIGNAL = TURN_OFF;
+                    MOVE_FORWARD_SIGNAL  = TURN_ON;
+                    movement_direction = FORWARD;
+                };
             };
         };
+        
+        overtorgue_flag = OFF;
+        must_be_closed = OFF;
+        MOTOR_POWER_SWITCH = TURN_ON;
+        counter=SLEEP_DELAY;
+        
+        PORTB; //read port before INTF reset 
         INTF=0;
     } else if (RBIF){
         // state of gates was changed
         if (OVERTORQUE_DETECTED_SENSOR==ON) {
             //action for rollback
+            must_be_closed = OFF;
             if (movement_direction==FORWARD) {
-                MOVE_FORWARD_SIGNAL  = OFF;
-                MOVE_BACKWARD_SIGNAL = ON;
-                __delay_ms(ROLL_BACK_TIME);
-                MOVE_BACKWARD_SIGNAL = OFF;
+                if (GATE_OPENED_SENSOR==ON) {
+                    MOVE_FORWARD_SIGNAL  = TURN_OFF;
+                    MOVE_BACKWARD_SIGNAL = TURN_OFF;
+                } else {
+                    MOVE_FORWARD_SIGNAL  = TURN_OFF;
+                    MOVE_BACKWARD_SIGNAL = TURN_ON;
+                    __delay_ms(ROLL_BACK_TIME);
+                    MOVE_BACKWARD_SIGNAL = TURN_OFF;
+                    movement_direction = BACK;
+                };
                 overtorgue_flag=ON;
-                movement_direction = BACK;
             } else {
-                MOVE_BACKWARD_SIGNAL = OFF;
+                MOVE_BACKWARD_SIGNAL = TURN_OFF;
+                MOVE_FORWARD_SIGNAL  = TURN_OFF;
                 overtorgue_flag=ON;
                 movement_direction = BACK;
             }; 
                     
         } else if (GATE_CLOSED_SENSOR==ON && GATE_OPENED_SENSOR==ON) {
             //gate closed
-            MOVE_FORWARD_SIGNAL  = OFF;
-            MOVE_BACKWARD_SIGNAL = OFF;
+            MOVE_FORWARD_SIGNAL  = TURN_OFF;
+            MOVE_BACKWARD_SIGNAL = TURN_OFF;
+            
         } else if (GATE_CLOSED_SENSOR==ON) {
             //gate closed
-            MOVE_FORWARD_SIGNAL  = OFF;
+            MOVE_FORWARD_SIGNAL  = TURN_OFF;
             movement_direction = BACK;
+            must_be_closed = ON;
             counter=SLEEP_DELAY;
-        
+            
         } else if (GATE_OPENED_SENSOR==ON) {
             //stop the movement
-            MOVE_BACKWARD_SIGNAL = OFF;
-            movement_direction = FORWARD;            
+            MOVE_BACKWARD_SIGNAL = TURN_OFF;
+            movement_direction = FORWARD;      
+            
+        } else if (GATE_CLOSED_SENSOR==OFF 
+                        && movement_direction== BACK
+                        && must_be_closed == ON
+                        && MOVE_BACKWARD_SIGNAL==TURN_OFF) {
+            // someone is trying to open gate by hand... 
+            MOTOR_POWER_SWITCH = TURN_ON;
+            MOVE_FORWARD_SIGNAL = TURN_ON;
+            movement_direction = FORWARD;
         };
+        PORTB;  //read port before RBIF reset 
         RBIF=0;
     };
 }

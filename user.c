@@ -25,31 +25,26 @@ extern char movement_direction;
 void InitApp(void)
 {
     /* TODO Initialize User Ports/Peripherals/Project here */
-    CMCON = 0b111; //Disable PORTA Comparators  
+    CMCON = 0b00000111; //Disable PORTA Comparators  
     
     /* Setup analog functionality and port direction */
     TRISA = 0b00000000;
-    TRISB = 0b11110001;
+    PORTA = 0b00000000;
 
-    /* Initialize peripherals */
-    PORTA = 0b11111111;
+    TRISB = 0b11110001;
     
-    /* Enable interrupts */
-    INTCON = 0b10011000;
-    INTEDG = 0;
+    nRBPU = 0;    
     
-    
-    RED_LIGHT = ON;
+    RED_LIGHT = TURN_ON;
     __delay_ms(500);
-    YELLOW_LIGHT = ON;
+    YELLOW_LIGHT = TURN_ON;
     __delay_ms(500);
-    RED_LIGHT = OFF;
-    YELLOW_LIGHT = OFF;
-    GREEN_LIGHT = ON;
+    RED_LIGHT = TURN_OFF;
+    YELLOW_LIGHT = TURN_OFF;
+    GREEN_LIGHT = TURN_ON;
     __delay_ms(500);
-    GREEN_LIGHT = 1;
-    
-    
+    GREEN_LIGHT = TURN_OFF;
+
     if (GATE_CLOSED_SENSOR==0) {
         movement_direction = BACK;
     } else if (GATE_OPENED_SENSOR==0) {
@@ -58,6 +53,15 @@ void InitApp(void)
         movement_direction = BACK;
     };
     
+    /* Enable interrupts */
+    INTCON = 0b10011000;
+    INTEDG = 0;
     
+    // enable motor equipment
+    MOTOR_POWER_SWITCH = TURN_ON;
+    
+    // disable movement
+    MOVE_FORWARD_SIGNAL = TURN_OFF;
+    MOVE_BACKWARD_SIGNAL = TURN_OFF;    
 }
 
