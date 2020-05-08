@@ -6,8 +6,8 @@
 
 
 // SENSORS definition
-#define GATE_CLOSED_SENSOR         RB4
-#define GATE_OPENED_SENSOR         RB5
+#define GATE_CLOSED_SENSOR         RB5
+#define GATE_OPENED_SENSOR         RB4
 #define OVERTORQUE_DETECTED_SENSOR RB6
 #define GATE_IS_RUNNING_SENSOR     RB7
 
@@ -27,7 +27,7 @@
 #define FORWARD 1
 #define BACK    0
 
-// button state definition (inverted for open drain connection)
+// button state definition (inverted for normaly opened relay)
 #define ON  0
 #define OFF 1
 
@@ -36,7 +36,7 @@
 #define TURN_OFF 0
 
 // Time for rollback action in the overtorque event.
-#define ROLL_BACK_TIME  200
+#define ROLL_BACK_TIME  500
 #define SLEEP_DELAY     20
 
 /* TODO Application specific user parameters used in user.c may go here */

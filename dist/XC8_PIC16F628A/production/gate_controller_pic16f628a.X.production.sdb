@@ -75,7 +75,7 @@
 "25 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
 {
-"66
+"79
 } 0
 "18 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
 [v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]

@@ -1159,6 +1159,9 @@ extern char movement_direction;
 void InitApp(void)
 {
 
+    INTCON = 0b00000000;
+
+
     CMCON = 0b00000111;
 
 
@@ -1166,8 +1169,13 @@ void InitApp(void)
     PORTA = 0b00000000;
 
     TRISB = 0b11110001;
-
     nRBPU = 0;
+
+
+    RA6 = 0;
+
+    RA0 = 0;
+    RA1 = 0;
 
     RA2 = 1;
     _delay((unsigned long)((500)*(4000000/4000.0)));
@@ -1179,22 +1187,27 @@ void InitApp(void)
     _delay((unsigned long)((500)*(4000000/4000.0)));
     RA7 = 0;
 
-    if (RB4==0) {
+
+    if (RB5==0) {
         movement_direction = 0;
-    } else if (RB5==0) {
+    } else if (RB4==0) {
         movement_direction = 1;
     } else {
         movement_direction = 0;
     };
 
 
-    INTCON = 0b10011000;
-    INTEDG = 0;
+    RA0 = 0;
+    RA1 = 0;
 
+    _delay((unsigned long)((100)*(4000000/4000.0)));
 
     RA6 = 1;
 
 
-    RA0 = 0;
-    RA1 = 0;
-}
+    _delay((unsigned long)((100)*(4000000/4000.0)));
+
+    INTCON = 0b10011000;
+    INTEDG = 0;
+
+};

@@ -4,12 +4,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1431 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1431: extern volatile __bit INTF __attribute__((address(0x59)));
 [v _INTF `Vb ~T0 @X0 0 e@89 ]
-"1494
-[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1494: extern volatile __bit RB4 __attribute__((address(0x34)));
-[v _RB4 `Vb ~T0 @X0 0 e@52 ]
 "1497
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1497: extern volatile __bit RB5 __attribute__((address(0x35)));
 [v _RB5 `Vb ~T0 @X0 0 e@53 ]
+"1494
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1494: extern volatile __bit RB4 __attribute__((address(0x34)));
+[v _RB4 `Vb ~T0 @X0 0 e@52 ]
 "1458
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1458: extern volatile __bit RA0 __attribute__((address(0x28)));
 [v _RA0 `Vb ~T0 @X0 0 e@40 ]
@@ -40,10 +40,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1500
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1500: extern volatile __bit RB6 __attribute__((address(0x36)));
 [v _RB6 `Vb ~T0 @X0 0 e@54 ]
-[v F461 `(v ~T0 @X0 1 tf1`ul ]
-"92 /opt/microchip/xc8/v2.10/pic/include/pic.h
-[v __delay `JF461 ~T0 @X0 0 e ]
-[p i __delay ]
 "54 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -167,8 +163,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! _INTF 52  ]
 {
 "41
-[; ;interrupts.c: 41:         if (RB4==0 && RB5==0 ) {
-[e $ ! && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 0 `i 53  ]
+[; ;interrupts.c: 41:         if (RB5==0 && RB4==0 ) {
+[e $ ! && == -> _RB5 `i -> 0 `i == -> _RB4 `i -> 0 `i 53  ]
 {
 "42
 [; ;interrupts.c: 42:             RA0 = 0;
@@ -203,8 +199,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _movement_direction `i -> 1 `i 57  ]
 {
 "50
-[; ;interrupts.c: 50:                 if (RB4==1) {
-[e $ ! == -> _RB4 `i -> 1 `i 58  ]
+[; ;interrupts.c: 50:                 if (RB5==1) {
+[e $ ! == -> _RB5 `i -> 1 `i 58  ]
 {
 "51
 [; ;interrupts.c: 51:                     RA1 = 0;
@@ -238,8 +234,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 57 ]
 {
 "59
-[; ;interrupts.c: 59:                 if (RB5==1) {
-[e $ ! == -> _RB5 `i -> 1 `i 61  ]
+[; ;interrupts.c: 59:                 if (RB4==1) {
+[e $ ! == -> _RB4 `i -> 1 `i 61  ]
 {
 "60
 [; ;interrupts.c: 60:                     RA1 = 1;
@@ -312,8 +308,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _movement_direction `i -> 1 `i 66  ]
 {
 "83
-[; ;interrupts.c: 83:                 if (RB5==0) {
-[e $ ! == -> _RB5 `i -> 0 `i 67  ]
+[; ;interrupts.c: 83:                 if (RB4==0) {
+[e $ ! == -> _RB4 `i -> 0 `i 67  ]
 {
 "84
 [; ;interrupts.c: 84:                     RA0 = 0;
@@ -333,12 +329,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "88
 [; ;interrupts.c: 88:                     RA1 = 1;
 [e = _RA1 -> -> 1 `i `b ]
-"89
-[; ;interrupts.c: 89:                     _delay((unsigned long)((200)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"90
-[; ;interrupts.c: 90:                     RA1 = 0;
-[e = _RA1 -> -> 0 `i `b ]
 "91
 [; ;interrupts.c: 91:                     movement_direction = 0;
 [e = _movement_direction -> -> 0 `i `uc ]
@@ -372,11 +362,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 69 ]
 "101
-[; ;interrupts.c: 101:         } else if (RB4==0 && RB5==0) {
+[; ;interrupts.c: 101:         } else if (RB5==0 && RB4==0) {
 }
 [e $U 70  ]
 [e :U 65 ]
-[e $ ! && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 0 `i 71  ]
+[e $ ! && == -> _RB5 `i -> 0 `i == -> _RB4 `i -> 0 `i 71  ]
 {
 "103
 [; ;interrupts.c: 103:             RA0 = 0;
@@ -385,11 +375,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 104:             RA1 = 0;
 [e = _RA1 -> -> 0 `i `b ]
 "106
-[; ;interrupts.c: 106:         } else if (RB4==0) {
+[; ;interrupts.c: 106:         } else if (RB5==0) {
 }
 [e $U 72  ]
 [e :U 71 ]
-[e $ ! == -> _RB4 `i -> 0 `i 73  ]
+[e $ ! == -> _RB5 `i -> 0 `i 73  ]
 {
 "108
 [; ;interrupts.c: 108:             RA0 = 0;
@@ -404,11 +394,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 111:             counter=20;
 [e = _counter -> 20 `i ]
 "113
-[; ;interrupts.c: 113:         } else if (RB5==0) {
+[; ;interrupts.c: 113:         } else if (RB4==0) {
 }
 [e $U 74  ]
 [e :U 73 ]
-[e $ ! == -> _RB5 `i -> 0 `i 75  ]
+[e $ ! == -> _RB4 `i -> 0 `i 75  ]
 {
 "115
 [; ;interrupts.c: 115:             RA1 = 0;
@@ -417,11 +407,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;interrupts.c: 116:             movement_direction = 1;
 [e = _movement_direction -> -> 1 `i `uc ]
 "118
-[; ;interrupts.c: 118:         } else if (RB4==1
+[; ;interrupts.c: 118:         } else if (RB5==1
 }
 [e $U 76  ]
 [e :U 75 ]
-[e $ ! && && && == -> _RB4 `i -> 1 `i == -> _movement_direction `i -> 0 `i == -> _must_be_closed `i -> 0 `i == -> _RA1 `i -> 0 `i 77  ]
+[e $ ! && && && == -> _RB5 `i -> 1 `i == -> _movement_direction `i -> 0 `i == -> _must_be_closed `i -> 0 `i == -> _RA1 `i -> 0 `i 77  ]
 "121
 [; ;interrupts.c: 121:                         && RA1==0) {
 {

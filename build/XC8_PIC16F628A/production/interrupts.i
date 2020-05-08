@@ -1163,7 +1163,7 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
     if(INTF){
 
-        if (RB4==0 && RB5==0 ) {
+        if (RB5==0 && RB4==0 ) {
             RA0 = 0;
             RA1 = 0;
         } else if (RA0==1 || RA1==1 ) {
@@ -1172,7 +1172,7 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
             movement_direction = (movement_direction==0)?1:0;
         } else {
             if(movement_direction==1) {
-                if (RB4==1) {
+                if (RB5==1) {
                     RA1 = 0;
                     RA0 = 1;
                 } else {
@@ -1181,7 +1181,7 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
                     movement_direction = 0;
                 };
             } else {
-                if (RB5==1) {
+                if (RB4==1) {
                     RA1 = 1;
                     RA0 = 0;
                 } else {
@@ -1205,14 +1205,14 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
             must_be_closed = 1;
             if (movement_direction==1) {
-                if (RB5==0) {
+                if (RB4==0) {
                     RA0 = 0;
                     RA1 = 0;
                 } else {
                     RA0 = 0;
                     RA1 = 1;
-                    _delay((unsigned long)((200)*(4000000/4000.0)));
-                    RA1 = 0;
+
+
                     movement_direction = 0;
                 };
                 overtorgue_flag=0;
@@ -1223,24 +1223,24 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
                 movement_direction = 0;
             };
 
-        } else if (RB4==0 && RB5==0) {
+        } else if (RB5==0 && RB4==0) {
 
             RA0 = 0;
             RA1 = 0;
 
-        } else if (RB4==0) {
+        } else if (RB5==0) {
 
             RA0 = 0;
             movement_direction = 0;
             must_be_closed = 0;
             counter=20;
 
-        } else if (RB5==0) {
+        } else if (RB4==0) {
 
             RA1 = 0;
             movement_direction = 1;
 
-        } else if (RB4==1
+        } else if (RB5==1
                         && movement_direction== 0
                         && must_be_closed == 0
                         && RA1==0) {

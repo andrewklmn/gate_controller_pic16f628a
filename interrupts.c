@@ -86,8 +86,8 @@ void __interrupt () my_isr_routine (void) {
                 } else {
                     MOVE_FORWARD_SIGNAL  = TURN_OFF;
                     MOVE_BACKWARD_SIGNAL = TURN_ON;
-                    __delay_ms(ROLL_BACK_TIME);
-                    MOVE_BACKWARD_SIGNAL = TURN_OFF;
+                    //__delay_ms(ROLL_BACK_TIME);
+                    //MOVE_BACKWARD_SIGNAL = TURN_OFF;
                     movement_direction = BACK;
                 };
                 overtorgue_flag=ON;

@@ -100,8 +100,8 @@ void main(void)
                     && GATE_IS_RUNNING_SENSOR==OFF) {
             
             GREEN_LIGHT = TURN_OFF;
-            YELLOW_LIGHT=!YELLOW_LIGHT;
-            //YELLOW_LIGHT=ON;
+            //YELLOW_LIGHT=!YELLOW_LIGHT;
+            YELLOW_LIGHT=TURN_ON;
             RED_LIGHT = TURN_OFF;
             
         } else {
