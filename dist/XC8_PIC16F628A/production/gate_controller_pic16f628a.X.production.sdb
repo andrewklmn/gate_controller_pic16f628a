@@ -19,6 +19,8 @@
 [v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
 "25 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
+"44 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.h
+[v _temp temp `VEuc  1 e 1 0 ]
 "166 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
@@ -43,6 +45,8 @@
 [v _RA2 RA2 `VEb  1 e 0 @42 ]
 "1467
 [v _RA3 RA3 `VEb  1 e 0 @43 ]
+"1473
+[v _RA5 RA5 `VEb  1 e 0 @45 ]
 "1476
 [v _RA6 RA6 `VEb  1 e 0 @46 ]
 "1479
@@ -75,7 +79,7 @@
 "25 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/user.c
 [v _InitApp InitApp `(v  1 e 1 0 ]
 {
-"79
+"80
 } 0
 "18 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/system.c
 [v _ConfigureOscillator ConfigureOscillator `(v  1 e 1 0 ]
@@ -85,5 +89,5 @@
 "32 /home/user/MPLABXProjects/gate_controller_pic16f628a.X/interrupts.c
 [v _my_isr_routine my_isr_routine `II(v  1 e 1 0 ]
 {
-"130
+"165
 } 0

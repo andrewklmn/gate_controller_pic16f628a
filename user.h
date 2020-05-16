@@ -6,10 +6,11 @@
 
 
 // SENSORS definition
-#define GATE_CLOSED_SENSOR         RB5
-#define GATE_OPENED_SENSOR         RB4
+#define GATE_CLOSED_SENSOR         RB4
+#define GATE_OPENED_SENSOR         RB5
 #define OVERTORQUE_DETECTED_SENSOR RB6
-#define GATE_IS_RUNNING_SENSOR     RB7
+#define GATE_IS_RUNNING_SENSOR     RA5
+#define IR_SENSOR                  RB7
 
 // output for motor control
 #define MOVE_FORWARD_SIGNAL        RA0
@@ -40,6 +41,7 @@
 #define SLEEP_DELAY     20
 
 /* TODO Application specific user parameters used in user.c may go here */
+volatile unsigned char temp;
 
 /******************************************************************************/
 /* User Function Prototypes                                                   */

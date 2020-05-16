@@ -1145,7 +1145,15 @@ typedef uint16_t uintptr_t;
 void ConfigureOscillator(void);
 # 16 "main.c" 2
 # 1 "./user.h" 1
-# 50 "./user.h"
+# 44 "./user.h"
+volatile unsigned char temp;
+
+
+
+
+
+
+
 void InitApp(void);
 # 17 "main.c" 2
 
@@ -1173,7 +1181,7 @@ void main(void)
 
     InitApp();
 
-    if (RB5==0) {
+    if (RB4==0) {
         movement_direction = 0;
         must_be_closed = 0;
     };
@@ -1186,19 +1194,19 @@ void main(void)
             RA3= 0;
             RA2 = !RA2;
 
-        } else if (RB5==0 && RB4==0) {
+        } else if (RB4==0 && RB5==0) {
 
             RA7 = 0;
             RA3= 0;
             RA2 = 1;
-            _delay((unsigned long)((200)*(4000000/4000.0)));
+            _delay((unsigned long)((100)*(4000000/4000.0)));
             RA2 = 0;
-            _delay((unsigned long)((200)*(4000000/4000.0)));
+            _delay((unsigned long)((100)*(4000000/4000.0)));
             RA2 = 1;
-            _delay((unsigned long)((200)*(4000000/4000.0)));
+            _delay((unsigned long)((100)*(4000000/4000.0)));
             RA2 = 0;
 
-        } else if(RB5==0 && RB4==1) {
+        } else if(RB4==0 && RB5==1) {
 
             RA7 = 0;
             RA3 = 0;
@@ -1208,15 +1216,15 @@ void main(void)
                 RA2 = 0;
                 RA6 = 0;
             };
-        } else if(RB5==1 && RB4==0) {
+        } else if(RB4==1 && RB5==0) {
 
             RA7=1;
             RA3=0;
             RA2=0;
 
-        } else if(RB5==1
-                    && RB4==1
-                    && RB7==0) {
+        } else if(RB4==1
+                    && RB5==1
+                    && RA5==0) {
 
             if (RA1==1) {
                 RA7 = 1;
@@ -1229,9 +1237,9 @@ void main(void)
             } else {
                 RA2 = 0;
             };
-        } else if(RB5==1
-                    && RB4==1
-                    && RB7==1) {
+        } else if(RB4==1
+                    && RB5==1
+                    && RA5==1) {
 
             RA7 = 0;
 

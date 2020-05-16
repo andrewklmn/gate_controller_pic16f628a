@@ -39,30 +39,52 @@ void __interrupt () my_isr_routine (void) {
     if(INTF){
        // CHANGE_STATE_BUTTON was pressed by user
         if (GATE_CLOSED_SENSOR==ON && GATE_OPENED_SENSOR==ON ) {
+            //gate position sensors error
             MOVE_FORWARD_SIGNAL = TURN_OFF; 
             MOVE_BACKWARD_SIGNAL = TURN_OFF;
+            
         } else if (MOVE_FORWARD_SIGNAL==TURN_ON || MOVE_BACKWARD_SIGNAL==TURN_ON ) {
+            //gate is moving
             MOVE_FORWARD_SIGNAL = TURN_OFF; 
             MOVE_BACKWARD_SIGNAL = TURN_OFF;
             movement_direction = (movement_direction==BACK)?FORWARD:BACK;
+            
         } else {
+            // gate is stopped
+            
             if(movement_direction==FORWARD) {
+                // it is going to close gate
                 if (GATE_CLOSED_SENSOR==OFF) {
+                    //gate is not closed yet
                     MOVE_BACKWARD_SIGNAL = TURN_OFF;
-                    MOVE_FORWARD_SIGNAL  = TURN_ON;
+                    // check if the IR sensor is clear
+                    if (IR_SENSOR==OFF) {
+                        movement_direction = FORWARD;
+                        MOVE_FORWARD_SIGNAL  = TURN_ON;
+                    };
                 } else {
-                    MOVE_BACKWARD_SIGNAL = TURN_ON;
+                    //gate is closed. start opening
                     MOVE_FORWARD_SIGNAL  = TURN_OFF;
                     movement_direction = BACK;
+                    MOVE_BACKWARD_SIGNAL = TURN_ON;
+                    
                 };
             } else {
+                //it is going to open gate
                 if (GATE_OPENED_SENSOR==OFF) {
-                    MOVE_BACKWARD_SIGNAL = TURN_ON;
+                    //gate is not opened yet
                     MOVE_FORWARD_SIGNAL  = TURN_OFF;                
+                    movement_direction = BACK;
+                    MOVE_BACKWARD_SIGNAL = TURN_ON;
                 } else {
+                    //gate is opened already. start closing
                     MOVE_BACKWARD_SIGNAL = TURN_OFF;
-                    MOVE_FORWARD_SIGNAL  = TURN_ON;
-                    movement_direction = FORWARD;
+                    if (IR_SENSOR==OFF) {
+                        movement_direction = FORWARD;
+                        MOVE_FORWARD_SIGNAL  = TURN_ON;
+                    } else {
+                        MOVE_FORWARD_SIGNAL  = TURN_OFF;
+                    };
                 };
             };
         };
@@ -76,6 +98,15 @@ void __interrupt () my_isr_routine (void) {
         INTF=0;
     } else if (RBIF){
         // state of gates was changed
+        
+        if (IR_SENSOR==ON
+            && MOVE_FORWARD_SIGNAL==TURN_ON
+            && must_be_closed == OFF ){
+                MOVE_FORWARD_SIGNAL = TURN_OFF;
+                movement_direction = BACK;
+                MOVE_BACKWARD_SIGNAL = TURN_ON;         
+        };
+        
         if (OVERTORQUE_DETECTED_SENSOR==ON) {
             //action for rollback
             must_be_closed = OFF;
@@ -84,21 +115,25 @@ void __interrupt () my_isr_routine (void) {
                     MOVE_FORWARD_SIGNAL  = TURN_OFF;
                     MOVE_BACKWARD_SIGNAL = TURN_OFF;
                 } else {
-                    MOVE_FORWARD_SIGNAL  = TURN_OFF;
-                    MOVE_BACKWARD_SIGNAL = TURN_ON;
-                    //__delay_ms(ROLL_BACK_TIME);
-                    //MOVE_BACKWARD_SIGNAL = TURN_OFF;
-                    movement_direction = BACK;
+                    if(GATE_IS_RUNNING_SENSOR==ON) {
+                        MOVE_FORWARD_SIGNAL  = TURN_OFF;
+                        MOVE_BACKWARD_SIGNAL = TURN_ON;
+                        __delay_ms(ROLL_BACK_TIME);
+                        MOVE_BACKWARD_SIGNAL = TURN_OFF;
+                        movement_direction = BACK;
+                    };
                 };
                 overtorgue_flag=ON;
             } else {
                 MOVE_BACKWARD_SIGNAL = TURN_OFF;
                 MOVE_FORWARD_SIGNAL  = TURN_OFF;
                 overtorgue_flag=ON;
-                movement_direction = BACK;
+                movement_direction = FORWARD;
             }; 
                     
-        } else if (GATE_CLOSED_SENSOR==ON && GATE_OPENED_SENSOR==ON) {
+        };
+        
+        if (GATE_CLOSED_SENSOR==ON && GATE_OPENED_SENSOR==ON) {
             //gate closed
             MOVE_FORWARD_SIGNAL  = TURN_OFF;
             MOVE_BACKWARD_SIGNAL = TURN_OFF;

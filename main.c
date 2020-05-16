@@ -57,11 +57,11 @@ void main(void)
             GREEN_LIGHT = TURN_OFF;
             YELLOW_LIGHT= TURN_OFF;
             RED_LIGHT = TURN_ON;
-            __delay_ms(200);
+            __delay_ms(100);
             RED_LIGHT = TURN_OFF;
-            __delay_ms(200);
+            __delay_ms(100);
             RED_LIGHT = TURN_ON;
-            __delay_ms(200);
+            __delay_ms(100);
             RED_LIGHT = TURN_OFF;
             
         } else if(GATE_CLOSED_SENSOR==ON && GATE_OPENED_SENSOR==OFF) {

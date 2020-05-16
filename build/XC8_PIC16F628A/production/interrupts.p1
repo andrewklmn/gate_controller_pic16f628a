@@ -4,12 +4,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1431 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1431: extern volatile __bit INTF __attribute__((address(0x59)));
 [v _INTF `Vb ~T0 @X0 0 e@89 ]
-"1497
-[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1497: extern volatile __bit RB5 __attribute__((address(0x35)));
-[v _RB5 `Vb ~T0 @X0 0 e@53 ]
 "1494
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1494: extern volatile __bit RB4 __attribute__((address(0x34)));
 [v _RB4 `Vb ~T0 @X0 0 e@52 ]
+"1497
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1497: extern volatile __bit RB5 __attribute__((address(0x35)));
+[v _RB5 `Vb ~T0 @X0 0 e@53 ]
 "1458
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1458: extern volatile __bit RA0 __attribute__((address(0x28)));
 [v _RA0 `Vb ~T0 @X0 0 e@40 ]
@@ -19,7 +19,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18 interrupts.c
 [; ;interrupts.c: 18: extern char movement_direction;
 [v _movement_direction `uc ~T0 @X0 0 e ]
-"17
+"1503 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1503: extern volatile __bit RB7 __attribute__((address(0x37)));
+[v _RB7 `Vb ~T0 @X0 0 e@55 ]
+"17 interrupts.c
 [; ;interrupts.c: 17: extern char overtorgue_flag;
 [v _overtorgue_flag `uc ~T0 @X0 0 e ]
 "21
@@ -40,6 +43,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1500
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1500: extern volatile __bit RB6 __attribute__((address(0x36)));
 [v _RB6 `Vb ~T0 @X0 0 e@54 ]
+"1473
+[; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1473: extern volatile __bit RA5 __attribute__((address(0x2D)));
+[v _RA5 `Vb ~T0 @X0 0 e@45 ]
+[v F461 `(v ~T0 @X0 1 tf1`ul ]
+"92 /opt/microchip/xc8/v2.10/pic/include/pic.h
+[v __delay `JF461 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -151,6 +161,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1269
 [; ;/opt/microchip/xc8/v2.10/pic/include/pic16f628a.h: 1269: __asm("VRCON equ 09Fh");
 [; <" VRCON equ 09Fh ;# ">
+"44 ./user.h
+[; ;./user.h: 44: volatile unsigned char temp;
+[v _temp `Vuc ~T0 @X0 1 e ]
 [v $root$_my_isr_routine `(v ~T0 @X0 0 e ]
 "32 interrupts.c
 [; ;interrupts.c: 32: void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
@@ -163,287 +176,351 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! _INTF 52  ]
 {
 "41
-[; ;interrupts.c: 41:         if (RB5==0 && RB4==0 ) {
-[e $ ! && == -> _RB5 `i -> 0 `i == -> _RB4 `i -> 0 `i 53  ]
+[; ;interrupts.c: 41:         if (RB4==0 && RB5==0 ) {
+[e $ ! && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 0 `i 53  ]
 {
-"42
-[; ;interrupts.c: 42:             RA0 = 0;
-[e = _RA0 -> -> 0 `i `b ]
 "43
-[; ;interrupts.c: 43:             RA1 = 0;
-[e = _RA1 -> -> 0 `i `b ]
+[; ;interrupts.c: 43:             RA0 = 0;
+[e = _RA0 -> -> 0 `i `b ]
 "44
-[; ;interrupts.c: 44:         } else if (RA0==1 || RA1==1 ) {
+[; ;interrupts.c: 44:             RA1 = 0;
+[e = _RA1 -> -> 0 `i `b ]
+"46
+[; ;interrupts.c: 46:         } else if (RA0==1 || RA1==1 ) {
 }
 [e $U 54  ]
 [e :U 53 ]
 [e $ ! || == -> _RA0 `i -> 1 `i == -> _RA1 `i -> 1 `i 55  ]
 {
-"45
-[; ;interrupts.c: 45:             RA0 = 0;
-[e = _RA0 -> -> 0 `i `b ]
-"46
-[; ;interrupts.c: 46:             RA1 = 0;
-[e = _RA1 -> -> 0 `i `b ]
-"47
-[; ;interrupts.c: 47:             movement_direction = (movement_direction==0)?1:0;
-[e = _movement_direction -> ? == -> _movement_direction `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
 "48
-[; ;interrupts.c: 48:         } else {
+[; ;interrupts.c: 48:             RA0 = 0;
+[e = _RA0 -> -> 0 `i `b ]
+"49
+[; ;interrupts.c: 49:             RA1 = 0;
+[e = _RA1 -> -> 0 `i `b ]
+"50
+[; ;interrupts.c: 50:             movement_direction = (movement_direction==0)?1:0;
+[e = _movement_direction -> ? == -> _movement_direction `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
+"52
+[; ;interrupts.c: 52:         } else {
 }
 [e $U 56  ]
 [e :U 55 ]
 {
-"49
-[; ;interrupts.c: 49:             if(movement_direction==1) {
+"55
+[; ;interrupts.c: 55:             if(movement_direction==1) {
 [e $ ! == -> _movement_direction `i -> 1 `i 57  ]
 {
-"50
-[; ;interrupts.c: 50:                 if (RB5==1) {
-[e $ ! == -> _RB5 `i -> 1 `i 58  ]
-{
-"51
-[; ;interrupts.c: 51:                     RA1 = 0;
-[e = _RA1 -> -> 0 `i `b ]
-"52
-[; ;interrupts.c: 52:                     RA0 = 1;
-[e = _RA0 -> -> 1 `i `b ]
-"53
-[; ;interrupts.c: 53:                 } else {
-}
-[e $U 59  ]
-[e :U 58 ]
-{
-"54
-[; ;interrupts.c: 54:                     RA1 = 1;
-[e = _RA1 -> -> 1 `i `b ]
-"55
-[; ;interrupts.c: 55:                     RA0 = 0;
-[e = _RA0 -> -> 0 `i `b ]
-"56
-[; ;interrupts.c: 56:                     movement_direction = 0;
-[e = _movement_direction -> -> 0 `i `uc ]
 "57
-[; ;interrupts.c: 57:                 };
-}
-[e :U 59 ]
-"58
-[; ;interrupts.c: 58:             } else {
-}
-[e $U 60  ]
-[e :U 57 ]
+[; ;interrupts.c: 57:                 if (RB4==1) {
+[e $ ! == -> _RB4 `i -> 1 `i 58  ]
 {
 "59
-[; ;interrupts.c: 59:                 if (RB4==1) {
-[e $ ! == -> _RB4 `i -> 1 `i 61  ]
-{
-"60
-[; ;interrupts.c: 60:                     RA1 = 1;
-[e = _RA1 -> -> 1 `i `b ]
-"61
-[; ;interrupts.c: 61:                     RA0 = 0;
-[e = _RA0 -> -> 0 `i `b ]
-"62
-[; ;interrupts.c: 62:                 } else {
-}
-[e $U 62  ]
-[e :U 61 ]
-{
-"63
-[; ;interrupts.c: 63:                     RA1 = 0;
+[; ;interrupts.c: 59:                     RA1 = 0;
 [e = _RA1 -> -> 0 `i `b ]
-"64
-[; ;interrupts.c: 64:                     RA0 = 1;
-[e = _RA0 -> -> 1 `i `b ]
-"65
-[; ;interrupts.c: 65:                     movement_direction = 1;
+"61
+[; ;interrupts.c: 61:                     if (RB7==1) {
+[e $ ! == -> _RB7 `i -> 1 `i 59  ]
+{
+"62
+[; ;interrupts.c: 62:                         movement_direction = 1;
 [e = _movement_direction -> -> 1 `i `uc ]
-"66
-[; ;interrupts.c: 66:                 };
+"63
+[; ;interrupts.c: 63:                         RA0 = 1;
+[e = _RA0 -> -> 1 `i `b ]
+"64
+[; ;interrupts.c: 64:                     };
 }
-[e :U 62 ]
+[e :U 59 ]
+"65
+[; ;interrupts.c: 65:                 } else {
+}
+[e $U 60  ]
+[e :U 58 ]
+{
 "67
-[; ;interrupts.c: 67:             };
+[; ;interrupts.c: 67:                     RA0 = 0;
+[e = _RA0 -> -> 0 `i `b ]
+"68
+[; ;interrupts.c: 68:                     movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"69
+[; ;interrupts.c: 69:                     RA1 = 1;
+[e = _RA1 -> -> 1 `i `b ]
+"71
+[; ;interrupts.c: 71:                 };
 }
 [e :U 60 ]
-"68
-[; ;interrupts.c: 68:         };
+"72
+[; ;interrupts.c: 72:             } else {
+}
+[e $U 61  ]
+[e :U 57 ]
+{
+"74
+[; ;interrupts.c: 74:                 if (RB5==1) {
+[e $ ! == -> _RB5 `i -> 1 `i 62  ]
+{
+"76
+[; ;interrupts.c: 76:                     RA0 = 0;
+[e = _RA0 -> -> 0 `i `b ]
+"77
+[; ;interrupts.c: 77:                     movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"78
+[; ;interrupts.c: 78:                     RA1 = 1;
+[e = _RA1 -> -> 1 `i `b ]
+"79
+[; ;interrupts.c: 79:                 } else {
+}
+[e $U 63  ]
+[e :U 62 ]
+{
+"81
+[; ;interrupts.c: 81:                     RA1 = 0;
+[e = _RA1 -> -> 0 `i `b ]
+"82
+[; ;interrupts.c: 82:                     if (RB7==1) {
+[e $ ! == -> _RB7 `i -> 1 `i 64  ]
+{
+"83
+[; ;interrupts.c: 83:                         movement_direction = 1;
+[e = _movement_direction -> -> 1 `i `uc ]
+"84
+[; ;interrupts.c: 84:                         RA0 = 1;
+[e = _RA0 -> -> 1 `i `b ]
+"85
+[; ;interrupts.c: 85:                     } else {
+}
+[e $U 65  ]
+[e :U 64 ]
+{
+"86
+[; ;interrupts.c: 86:                         RA0 = 0;
+[e = _RA0 -> -> 0 `i `b ]
+"87
+[; ;interrupts.c: 87:                     };
+}
+[e :U 65 ]
+"88
+[; ;interrupts.c: 88:                 };
+}
+[e :U 63 ]
+"89
+[; ;interrupts.c: 89:             };
+}
+[e :U 61 ]
+"90
+[; ;interrupts.c: 90:         };
 }
 [e :U 56 ]
 [e :U 54 ]
-"70
-[; ;interrupts.c: 70:         overtorgue_flag = 1;
-[e = _overtorgue_flag -> -> 1 `i `uc ]
-"71
-[; ;interrupts.c: 71:         must_be_closed = 1;
-[e = _must_be_closed -> -> 1 `i `uc ]
-"72
-[; ;interrupts.c: 72:         RA6 = 1;
-[e = _RA6 -> -> 1 `i `b ]
-"73
-[; ;interrupts.c: 73:         counter=20;
-[e = _counter -> 20 `i ]
-"75
-[; ;interrupts.c: 75:         PORTB;
-[e _PORTB ]
-"76
-[; ;interrupts.c: 76:         INTF=0;
-[e = _INTF -> -> 0 `i `b ]
-"77
-[; ;interrupts.c: 77:     } else if (RBIF){
-}
-[e $U 63  ]
-[e :U 52 ]
-[e $ ! _RBIF 64  ]
-{
-"79
-[; ;interrupts.c: 79:         if (RB6==0) {
-[e $ ! == -> _RB6 `i -> 0 `i 65  ]
-{
-"81
-[; ;interrupts.c: 81:             must_be_closed = 1;
-[e = _must_be_closed -> -> 1 `i `uc ]
-"82
-[; ;interrupts.c: 82:             if (movement_direction==1) {
-[e $ ! == -> _movement_direction `i -> 1 `i 66  ]
-{
-"83
-[; ;interrupts.c: 83:                 if (RB4==0) {
-[e $ ! == -> _RB4 `i -> 0 `i 67  ]
-{
-"84
-[; ;interrupts.c: 84:                     RA0 = 0;
-[e = _RA0 -> -> 0 `i `b ]
-"85
-[; ;interrupts.c: 85:                     RA1 = 0;
-[e = _RA1 -> -> 0 `i `b ]
-"86
-[; ;interrupts.c: 86:                 } else {
-}
-[e $U 68  ]
-[e :U 67 ]
-{
-"87
-[; ;interrupts.c: 87:                     RA0 = 0;
-[e = _RA0 -> -> 0 `i `b ]
-"88
-[; ;interrupts.c: 88:                     RA1 = 1;
-[e = _RA1 -> -> 1 `i `b ]
-"91
-[; ;interrupts.c: 91:                     movement_direction = 0;
-[e = _movement_direction -> -> 0 `i `uc ]
 "92
-[; ;interrupts.c: 92:                 };
+[; ;interrupts.c: 92:         overtorgue_flag = 1;
+[e = _overtorgue_flag -> -> 1 `i `uc ]
+"93
+[; ;interrupts.c: 93:         must_be_closed = 1;
+[e = _must_be_closed -> -> 1 `i `uc ]
+"94
+[; ;interrupts.c: 94:         RA6 = 1;
+[e = _RA6 -> -> 1 `i `b ]
+"95
+[; ;interrupts.c: 95:         counter=20;
+[e = _counter -> 20 `i ]
+"97
+[; ;interrupts.c: 97:         PORTB;
+[e _PORTB ]
+"98
+[; ;interrupts.c: 98:         INTF=0;
+[e = _INTF -> -> 0 `i `b ]
+"99
+[; ;interrupts.c: 99:     } else if (RBIF){
+}
+[e $U 66  ]
+[e :U 52 ]
+[e $ ! _RBIF 67  ]
+{
+"102
+[; ;interrupts.c: 102:         if (RB7==0
+[e $ ! && && == -> _RB7 `i -> 0 `i == -> _RA0 `i -> 1 `i == -> _must_be_closed `i -> 1 `i 68  ]
+"104
+[; ;interrupts.c: 104:             && must_be_closed == 1 ){
+{
+"105
+[; ;interrupts.c: 105:                 RA0 = 0;
+[e = _RA0 -> -> 0 `i `b ]
+"106
+[; ;interrupts.c: 106:                 movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"107
+[; ;interrupts.c: 107:                 RA1 = 1;
+[e = _RA1 -> -> 1 `i `b ]
+"108
+[; ;interrupts.c: 108:         };
 }
 [e :U 68 ]
-"93
-[; ;interrupts.c: 93:                 overtorgue_flag=0;
-[e = _overtorgue_flag -> -> 0 `i `uc ]
-"94
-[; ;interrupts.c: 94:             } else {
-}
-[e $U 69  ]
-[e :U 66 ]
+"110
+[; ;interrupts.c: 110:         if (RB6==0) {
+[e $ ! == -> _RB6 `i -> 0 `i 69  ]
 {
-"95
-[; ;interrupts.c: 95:                 RA1 = 0;
-[e = _RA1 -> -> 0 `i `b ]
-"96
-[; ;interrupts.c: 96:                 RA0 = 0;
-[e = _RA0 -> -> 0 `i `b ]
-"97
-[; ;interrupts.c: 97:                 overtorgue_flag=0;
-[e = _overtorgue_flag -> -> 0 `i `uc ]
-"98
-[; ;interrupts.c: 98:                 movement_direction = 0;
-[e = _movement_direction -> -> 0 `i `uc ]
-"99
-[; ;interrupts.c: 99:             };
-}
-[e :U 69 ]
-"101
-[; ;interrupts.c: 101:         } else if (RB5==0 && RB4==0) {
-}
-[e $U 70  ]
-[e :U 65 ]
-[e $ ! && == -> _RB5 `i -> 0 `i == -> _RB4 `i -> 0 `i 71  ]
+"112
+[; ;interrupts.c: 112:             must_be_closed = 1;
+[e = _must_be_closed -> -> 1 `i `uc ]
+"113
+[; ;interrupts.c: 113:             if (movement_direction==1) {
+[e $ ! == -> _movement_direction `i -> 1 `i 70  ]
 {
-"103
-[; ;interrupts.c: 103:             RA0 = 0;
+"114
+[; ;interrupts.c: 114:                 if (RB5==0) {
+[e $ ! == -> _RB5 `i -> 0 `i 71  ]
+{
+"115
+[; ;interrupts.c: 115:                     RA0 = 0;
 [e = _RA0 -> -> 0 `i `b ]
-"104
-[; ;interrupts.c: 104:             RA1 = 0;
+"116
+[; ;interrupts.c: 116:                     RA1 = 0;
 [e = _RA1 -> -> 0 `i `b ]
-"106
-[; ;interrupts.c: 106:         } else if (RB5==0) {
+"117
+[; ;interrupts.c: 117:                 } else {
 }
 [e $U 72  ]
 [e :U 71 ]
-[e $ ! == -> _RB5 `i -> 0 `i 73  ]
 {
-"108
-[; ;interrupts.c: 108:             RA0 = 0;
+"118
+[; ;interrupts.c: 118:                     if(RA5==0) {
+[e $ ! == -> _RA5 `i -> 0 `i 73  ]
+{
+"119
+[; ;interrupts.c: 119:                         RA0 = 0;
 [e = _RA0 -> -> 0 `i `b ]
-"109
-[; ;interrupts.c: 109:             movement_direction = 0;
+"120
+[; ;interrupts.c: 120:                         RA1 = 1;
+[e = _RA1 -> -> 1 `i `b ]
+"121
+[; ;interrupts.c: 121:                         _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"122
+[; ;interrupts.c: 122:                         RA1 = 0;
+[e = _RA1 -> -> 0 `i `b ]
+"123
+[; ;interrupts.c: 123:                         movement_direction = 0;
 [e = _movement_direction -> -> 0 `i `uc ]
-"110
-[; ;interrupts.c: 110:             must_be_closed = 0;
-[e = _must_be_closed -> -> 0 `i `uc ]
-"111
-[; ;interrupts.c: 111:             counter=20;
-[e = _counter -> 20 `i ]
-"113
-[; ;interrupts.c: 113:         } else if (RB4==0) {
+"124
+[; ;interrupts.c: 124:                     };
+}
+[e :U 73 ]
+"125
+[; ;interrupts.c: 125:                 };
+}
+[e :U 72 ]
+"126
+[; ;interrupts.c: 126:                 overtorgue_flag=0;
+[e = _overtorgue_flag -> -> 0 `i `uc ]
+"127
+[; ;interrupts.c: 127:             } else {
 }
 [e $U 74  ]
-[e :U 73 ]
-[e $ ! == -> _RB4 `i -> 0 `i 75  ]
+[e :U 70 ]
 {
-"115
-[; ;interrupts.c: 115:             RA1 = 0;
+"128
+[; ;interrupts.c: 128:                 RA1 = 0;
 [e = _RA1 -> -> 0 `i `b ]
-"116
-[; ;interrupts.c: 116:             movement_direction = 1;
+"129
+[; ;interrupts.c: 129:                 RA0 = 0;
+[e = _RA0 -> -> 0 `i `b ]
+"130
+[; ;interrupts.c: 130:                 overtorgue_flag=0;
+[e = _overtorgue_flag -> -> 0 `i `uc ]
+"131
+[; ;interrupts.c: 131:                 movement_direction = 1;
 [e = _movement_direction -> -> 1 `i `uc ]
-"118
-[; ;interrupts.c: 118:         } else if (RB5==1
+"132
+[; ;interrupts.c: 132:             };
+}
+[e :U 74 ]
+"134
+[; ;interrupts.c: 134:         };
+}
+[e :U 69 ]
+"136
+[; ;interrupts.c: 136:         if (RB4==0 && RB5==0) {
+[e $ ! && == -> _RB4 `i -> 0 `i == -> _RB5 `i -> 0 `i 75  ]
+{
+"138
+[; ;interrupts.c: 138:             RA0 = 0;
+[e = _RA0 -> -> 0 `i `b ]
+"139
+[; ;interrupts.c: 139:             RA1 = 0;
+[e = _RA1 -> -> 0 `i `b ]
+"141
+[; ;interrupts.c: 141:         } else if (RB4==0) {
 }
 [e $U 76  ]
 [e :U 75 ]
-[e $ ! && && && == -> _RB5 `i -> 1 `i == -> _movement_direction `i -> 0 `i == -> _must_be_closed `i -> 0 `i == -> _RA1 `i -> 0 `i 77  ]
-"121
-[; ;interrupts.c: 121:                         && RA1==0) {
+[e $ ! == -> _RB4 `i -> 0 `i 77  ]
 {
-"123
-[; ;interrupts.c: 123:             RA6 = 1;
-[e = _RA6 -> -> 1 `i `b ]
-"124
-[; ;interrupts.c: 124:             RA0 = 1;
-[e = _RA0 -> -> 1 `i `b ]
-"125
-[; ;interrupts.c: 125:             movement_direction = 1;
-[e = _movement_direction -> -> 1 `i `uc ]
-"126
-[; ;interrupts.c: 126:         };
+"143
+[; ;interrupts.c: 143:             RA0 = 0;
+[e = _RA0 -> -> 0 `i `b ]
+"144
+[; ;interrupts.c: 144:             movement_direction = 0;
+[e = _movement_direction -> -> 0 `i `uc ]
+"145
+[; ;interrupts.c: 145:             must_be_closed = 0;
+[e = _must_be_closed -> -> 0 `i `uc ]
+"146
+[; ;interrupts.c: 146:             counter=20;
+[e = _counter -> 20 `i ]
+"148
+[; ;interrupts.c: 148:         } else if (RB5==0) {
 }
+[e $U 78  ]
 [e :U 77 ]
-[e :U 76 ]
-[e :U 74 ]
-[e :U 72 ]
-[e :U 70 ]
-"127
-[; ;interrupts.c: 127:         PORTB;
-[e _PORTB ]
-"128
-[; ;interrupts.c: 128:         RBIF=0;
-[e = _RBIF -> -> 0 `i `b ]
-"129
-[; ;interrupts.c: 129:     };
+[e $ ! == -> _RB5 `i -> 0 `i 79  ]
+{
+"150
+[; ;interrupts.c: 150:             RA1 = 0;
+[e = _RA1 -> -> 0 `i `b ]
+"151
+[; ;interrupts.c: 151:             movement_direction = 1;
+[e = _movement_direction -> -> 1 `i `uc ]
+"153
+[; ;interrupts.c: 153:         } else if (RB4==1
 }
-[e :U 64 ]
-[e :U 63 ]
-"130
-[; ;interrupts.c: 130: }
+[e $U 80  ]
+[e :U 79 ]
+[e $ ! && && && == -> _RB4 `i -> 1 `i == -> _movement_direction `i -> 0 `i == -> _must_be_closed `i -> 0 `i == -> _RA1 `i -> 0 `i 81  ]
+"156
+[; ;interrupts.c: 156:                         && RA1==0) {
+{
+"158
+[; ;interrupts.c: 158:             RA6 = 1;
+[e = _RA6 -> -> 1 `i `b ]
+"159
+[; ;interrupts.c: 159:             RA0 = 1;
+[e = _RA0 -> -> 1 `i `b ]
+"160
+[; ;interrupts.c: 160:             movement_direction = 1;
+[e = _movement_direction -> -> 1 `i `uc ]
+"161
+[; ;interrupts.c: 161:         };
+}
+[e :U 81 ]
+[e :U 80 ]
+[e :U 78 ]
+[e :U 76 ]
+"162
+[; ;interrupts.c: 162:         PORTB;
+[e _PORTB ]
+"163
+[; ;interrupts.c: 163:         RBIF=0;
+[e = _RBIF -> -> 0 `i `b ]
+"164
+[; ;interrupts.c: 164:     };
+}
+[e :U 67 ]
+[e :U 66 ]
+"165
+[; ;interrupts.c: 165: }
 [e :UE 51 ]
 }

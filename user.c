@@ -31,7 +31,7 @@ void InitApp(void)
     CMCON = 0b00000111; //Disable PORTA Comparators  
     
     /* Setup analog functionality and port direction */
-    TRISA = 0b00000000;
+    TRISA = 0b00100000;
     PORTA = 0b00000000;
 
     TRISB = 0b11110001;    
@@ -52,7 +52,7 @@ void InitApp(void)
     GREEN_LIGHT = TURN_ON;
     __delay_ms(500);
     GREEN_LIGHT = TURN_OFF;
-
+    
     
     if (GATE_CLOSED_SENSOR==0) {
         movement_direction = BACK;
@@ -73,6 +73,7 @@ void InitApp(void)
         
     __delay_ms(100);
     /* Enable interrupts */
+    temp=PORTB;
     INTCON = 0b10011000;
     INTEDG = 0; 
     

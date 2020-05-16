@@ -1144,7 +1144,15 @@ typedef uint16_t uintptr_t;
 void ConfigureOscillator(void);
 # 15 "interrupts.c" 2
 # 1 "./user.h" 1
-# 50 "./user.h"
+# 44 "./user.h"
+volatile unsigned char temp;
+
+
+
+
+
+
+
 void InitApp(void);
 # 16 "interrupts.c" 2
 
@@ -1163,31 +1171,53 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
 
     if(INTF){
 
-        if (RB5==0 && RB4==0 ) {
+        if (RB4==0 && RB5==0 ) {
+
             RA0 = 0;
             RA1 = 0;
+
         } else if (RA0==1 || RA1==1 ) {
+
             RA0 = 0;
             RA1 = 0;
             movement_direction = (movement_direction==0)?1:0;
+
         } else {
+
+
             if(movement_direction==1) {
-                if (RB5==1) {
+
+                if (RB4==1) {
+
                     RA1 = 0;
-                    RA0 = 1;
+
+                    if (RB7==1) {
+                        movement_direction = 1;
+                        RA0 = 1;
+                    };
                 } else {
-                    RA1 = 1;
+
                     RA0 = 0;
                     movement_direction = 0;
+                    RA1 = 1;
+
                 };
             } else {
-                if (RB4==1) {
-                    RA1 = 1;
+
+                if (RB5==1) {
+
                     RA0 = 0;
+                    movement_direction = 0;
+                    RA1 = 1;
                 } else {
+
                     RA1 = 0;
-                    RA0 = 1;
-                    movement_direction = 1;
+                    if (RB7==1) {
+                        movement_direction = 1;
+                        RA0 = 1;
+                    } else {
+                        RA0 = 0;
+                    };
                 };
             };
         };
@@ -1201,46 +1231,59 @@ void __attribute__((picinterrupt(("")))) my_isr_routine (void) {
         INTF=0;
     } else if (RBIF){
 
+
+        if (RB7==0
+            && RA0==1
+            && must_be_closed == 1 ){
+                RA0 = 0;
+                movement_direction = 0;
+                RA1 = 1;
+        };
+
         if (RB6==0) {
 
             must_be_closed = 1;
             if (movement_direction==1) {
-                if (RB4==0) {
+                if (RB5==0) {
                     RA0 = 0;
                     RA1 = 0;
                 } else {
-                    RA0 = 0;
-                    RA1 = 1;
-
-
-                    movement_direction = 0;
+                    if(RA5==0) {
+                        RA0 = 0;
+                        RA1 = 1;
+                        _delay((unsigned long)((500)*(4000000/4000.0)));
+                        RA1 = 0;
+                        movement_direction = 0;
+                    };
                 };
                 overtorgue_flag=0;
             } else {
                 RA1 = 0;
                 RA0 = 0;
                 overtorgue_flag=0;
-                movement_direction = 0;
+                movement_direction = 1;
             };
 
-        } else if (RB5==0 && RB4==0) {
+        };
+
+        if (RB4==0 && RB5==0) {
 
             RA0 = 0;
             RA1 = 0;
 
-        } else if (RB5==0) {
+        } else if (RB4==0) {
 
             RA0 = 0;
             movement_direction = 0;
             must_be_closed = 0;
             counter=20;
 
-        } else if (RB4==0) {
+        } else if (RB5==0) {
 
             RA1 = 0;
             movement_direction = 1;
 
-        } else if (RB5==1
+        } else if (RB4==1
                         && movement_direction== 0
                         && must_be_closed == 0
                         && RA1==0) {

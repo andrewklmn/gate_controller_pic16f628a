@@ -1145,7 +1145,15 @@ typedef uint16_t uintptr_t;
 void ConfigureOscillator(void);
 # 16 "user.c" 2
 # 1 "./user.h" 1
-# 50 "./user.h"
+# 44 "./user.h"
+volatile unsigned char temp;
+
+
+
+
+
+
+
 void InitApp(void);
 # 17 "user.c" 2
 
@@ -1165,7 +1173,7 @@ void InitApp(void)
     CMCON = 0b00000111;
 
 
-    TRISA = 0b00000000;
+    TRISA = 0b00100000;
     PORTA = 0b00000000;
 
     TRISB = 0b11110001;
@@ -1188,9 +1196,9 @@ void InitApp(void)
     RA7 = 0;
 
 
-    if (RB5==0) {
+    if (RB4==0) {
         movement_direction = 0;
-    } else if (RB4==0) {
+    } else if (RB5==0) {
         movement_direction = 1;
     } else {
         movement_direction = 0;
@@ -1207,6 +1215,7 @@ void InitApp(void)
 
     _delay((unsigned long)((100)*(4000000/4000.0)));
 
+    temp=PORTB;
     INTCON = 0b10011000;
     INTEDG = 0;
 
