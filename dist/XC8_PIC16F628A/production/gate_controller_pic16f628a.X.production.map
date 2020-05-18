@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.10/pic/dat/en_msgs.txt -cs \
   -h+dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.sym \
   --cmf=dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.cmf \
-  -z -Q16F628A -o/tmp/xcXCUkBQL --defsym=__MPLAB_BUILD=1 \
+  -z -Q16F628A -o/tmp/xcXie8Gz9 --defsym=__MPLAB_BUILD=1 \
   -Mdist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.map \
   -E1 -ver=XC8 --acfsm=1493 -ASTACK=0A0h-0EFh -pstack=STACK \
   -ACODE=00h-07FFh -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-07Fh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k /tmp/xcXmna04n.o \
+  -DENTRY=2 -k /tmp/xcXRxrBn0.o \
   dist/XC8_PIC16F628A/production/gate_controller_pic16f628a.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F628A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXmna04n.o
+/tmp/xcXRxrBn0.o
                 end_init                              A        A        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             2007     2007        1     400E       0
