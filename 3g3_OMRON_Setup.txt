@@ -1,0 +1,25 @@
+3g3 OMRON parameter setup
+
+N001    8       reset all parameters
+N001    5       open all parameters for editing
+N003    1       select two wired control mode
+N019    1-3     start time in seconds
+N020    0.3     stop time in seconds
+N036    0.6-1   select overload current in A
+N037    0       turn on overload defend
+N038    8       time of overload defend in minutes
+N050    1       select S1 as forward/stop
+N051    2       select S2 as backward/stop
+N058    1       select P1 as run signal output
+N059    6       select P2 as overtorque signal output
+
+Overtorque setup parameters:
+
+N096    3       do not stop when overtorque detected
+N097    1       detect overtorque by output current
+N098    30      set to minimal overtorque detection level
+N099    0.2     set overtorque detection time
+
+Other parameters:
+N011    50      set max frequency
+N005    1       set "do not turn off when stop" or not?
